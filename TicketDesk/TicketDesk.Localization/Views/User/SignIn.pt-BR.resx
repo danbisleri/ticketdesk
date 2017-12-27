@@ -121,7 +121,7 @@
     <value>Registrar como novo usuário</value>
   </data>
   <data name="Header" xml:space="preserve">
-    <value>Entre com suas credenciais de acesso</value>
+    <value>Entrar</value>
   </data>
   <data name="Legend" xml:space="preserve">
     <value>Entrar</value>

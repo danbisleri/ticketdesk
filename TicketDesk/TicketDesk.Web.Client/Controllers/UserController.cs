@@ -118,6 +118,7 @@ namespace TicketDesk.Web.Client.Controllers
             ViewBag.IsDemoMode = (ConfigurationManager.AppSettings["ticketdesk:DemoModeEnabled"] ?? "false").Equals("true", StringComparison.InvariantCultureIgnoreCase);
 
             return View();
+            //return RedirectToAction("Index", "TicketCenter");
         }
 
         [HttpPost]
@@ -133,7 +134,9 @@ namespace TicketDesk.Web.Client.Controllers
                 return View(model);
             }
 
+
             var result = await SignInManager.PasswordSignInAsync(model.UserNameOrEmail, model.Password, model.RememberMe, true);
+
             if (result != SignInStatus.Success && model.UserNameOrEmail.Contains("@"))
             {
                 var user = await UserManager.FindByEmailAsync(model.UserNameOrEmail);
@@ -142,6 +145,7 @@ namespace TicketDesk.Web.Client.Controllers
                     result = await SignInManager.PasswordSignInAsync(user.UserName, model.Password, model.RememberMe, true);
                 }
             }
+
 
             switch (result)
             {
@@ -159,7 +163,7 @@ namespace TicketDesk.Web.Client.Controllers
         public ActionResult SignOut()
         {
             AuthenticationManager.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("SignIn", "User", "loginLink");
         }
 
         private IAuthenticationManager AuthenticationManager
@@ -183,7 +187,7 @@ namespace TicketDesk.Web.Client.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "TicketCenter");
         }
     }
 }

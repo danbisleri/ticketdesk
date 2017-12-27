@@ -72,6 +72,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Strings.pt-BR1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.pt-BR.resx</DependentUpon>
+    </Compile>
     <Compile Include="Validation.pt-BR.Designer.cs">
       <DependentUpon>Validation.pt-BR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -471,7 +476,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Models\Strings.pt-BR.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings.pt-BR.Designer.cs</LastGenOutput>
+      <LastGenOutput>Strings.pt-BR1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Models\Strings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

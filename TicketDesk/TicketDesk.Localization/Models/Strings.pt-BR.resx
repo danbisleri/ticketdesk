@@ -193,9 +193,9 @@
     <value>Resolvido</value>
   </data>
   <data name="UserNameOrEmail" xml:space="preserve">
-    <value>Nome de usuário / email</value>
+    <value>Usuário/Email</value>
   </data>
   <data name="UserName" xml:space="preserve">
-    <value>Nome de usuário</value>
+    <value>Usuário</value>
   </data>
 </root>
