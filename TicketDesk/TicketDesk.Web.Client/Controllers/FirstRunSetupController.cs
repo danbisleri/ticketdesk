@@ -167,7 +167,7 @@ namespace TicketDesk.Web.Client.Controllers
 
         [HttpPost]
         [Route("create-database")]
-        public async Task<ActionResult> CreateDatabase(string email, string password, string displayName)
+        public async Task<ActionResult> CreateDatabase(string email, string password, string displayName, string user)
         {
             using (var ctx = new TdDomainContext(null))
             {
@@ -190,7 +190,7 @@ namespace TicketDesk.Web.Client.Controllers
             TicketDeskUser newUser = null;
             if (existingUser == null)
             {
-                newUser = new TicketDeskUser { UserName = email, Email = email, DisplayName = displayName };
+                newUser = new TicketDeskUser { UserName = user, Email = email, DisplayName = displayName , };
                 await UserManager.CreateAsync(newUser, password);
                 await UserManager.AddToRoleAsync(newUser.Id, "TdAdministrators");
                
