@@ -13,11 +13,16 @@
     provided to the recipient.
 *@
 @using TicketDesk.Localization.Views.TicketCenter
+@using TicketDesk.Domain.Model
 
 @model TicketDesk.Web.Client.Models.TicketCenterListViewModel
 @{
+
+    var tickets = Model.Tickets;
     var ajaxFilterOptions = new AjaxOptions { UpdateTargetId = "ticketList", OnBegin = "ticketCenter.filters.beginChangeFilter", OnSuccess = "ticketCenter.completeChangeList", OnFailure = "ticketCenter.completeChangeList" };
 }
+
+
 
 <div class="navbar" style="min-height: 0; margin: 0">
     <div class="">
@@ -31,7 +36,8 @@
             @using (Ajax.BeginForm("FilterList", "TicketCenter", new { Model.CurrentListSetting.ListName }, ajaxFilterOptions, new { id = "filterForm", @class = "form-horizontal navbar-form", role = "form" }))
             {
                 <div class="row">
-                    <div class="form-group form-group-xs small" style="width: 100%; margin: 0;">
+                    <div class="form-group form-group-xs small" style="width: 100%; ">
+
                         <label class="control-label col-sm-1 text-right">
                             @Index.Status
                         </label>
@@ -42,27 +48,41 @@
                         <label class="control-label col-sm-1 text-right form-control-static">
                             @Index.Owner
                         </label>
-                        <div class="col-sm-2">
+                        <div class="col-sm-1">
                             @Html.DropDownList("Owner", Model.FilterBar.SubmittersSelectList, Model.FilterBar.OwnerFilterHtmlAttributes)
                         </div>
 
                         <label class="control-label col-sm-1 text-right form-control-static">
                             @Index.Assigned
                         </label>
-                        <div class="col-sm-2">
+                        <div class="col-sm-1">
                             @Html.DropDownList("AssignedTo", Model.FilterBar.AssignedToSelectList, Model.FilterBar.AssignedFilterHtmlAttributes)
                             <input type="submit" value="filter" id="filterSubmitButton" />
                         </div>
+
                         <label class="control-label col-sm-1 text-right form-control-static">
                             @Index.Show
                         </label>
-                        <div class="col-sm-2" style="white-space: nowrap">
+                        <div class="col-sm-1" style="white-space: nowrap">
                             @Html.DropDownList("PageSize", Model.FilterBar.ItemsPerPageSelectList, new { @class = "postback form-control number-select" })<label class="control-label form-control-static"> @string.Format(Index.TotalItemCount, Model.Tickets.TotalItemCount)</label>
                         </div>
+
+                         <label class="control-label col-sm-1 text-right form-control-static">
+                                @Index.DateTicket @Index.Start
+                            </label>
+                            <div class="col-sm-1">
+                                @Html.TextBoxFor(model => model.FilterBar.EndedTicketDateStart, new { @class = "form-control datepicker" })
+                            </div>
+                            <label class="control-label col-sm-10 text-right form-control-static">
+                                @Index.End
+                            </label>
+                            <div class="col-sm-1">
+                                @Html.TextBoxFor(model => model.FilterBar.EndedTicketDateEnd, new { @class = "form-control datepicker" })
+                            </div>
+                        
                     </div>
                 </div>
             }
         </div>
     </div>
 </div>
-

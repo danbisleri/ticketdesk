@@ -88,6 +88,24 @@ namespace TicketDesk.Localization.Views.TicketCenter {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Date.
+        /// </summary>
+        public static string DateTicket {
+            get {
+                return ResourceManager.GetString("DateTicket", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a End.
+        /// </summary>
+        public static string End {
+            get {
+                return ResourceManager.GetString("End", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Owner:.
         /// </summary>
         public static string Owner {
@@ -147,6 +165,15 @@ namespace TicketDesk.Localization.Views.TicketCenter {
         public static string Show {
             get {
                 return ResourceManager.GetString("Show", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Start.
+        /// </summary>
+        public static string Start {
+            get {
+                return ResourceManager.GetString("Start", resourceCulture);
             }
         }
         

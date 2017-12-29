@@ -126,6 +126,12 @@
   <data name="CloseOption" xml:space="preserve">
     <value>Close</value>
   </data>
+  <data name="DateTicket" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="End" xml:space="preserve">
+    <value>End</value>
+  </data>
   <data name="Owner" xml:space="preserve">
     <value>Owner:</value>
   </data>
@@ -146,6 +152,9 @@
   </data>
   <data name="Show" xml:space="preserve">
     <value>Show:</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>Status:</value>

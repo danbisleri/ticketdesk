@@ -36,6 +36,10 @@ namespace TicketDesk.Web.Client.Models
         }
 
 
+        public DateTimeOffset? EndedTicketDateEnd => CurrentListSetting.EndedTicketDateEnd;
+
+        public DateTimeOffset? EndedTicketDateStart => CurrentListSetting.EndedTicketDateStart;
+
         //TODO: Refactor all selectlists here to use the select list extensions B
 
         public SelectList ItemsPerPageSelectList
@@ -110,7 +114,6 @@ namespace TicketDesk.Web.Client.Models
             }
         }
 
-       
 
         public SelectList SubmittersSelectList
         {

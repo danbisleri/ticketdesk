@@ -12,6 +12,7 @@
 // provided to the recipient.
 
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TicketDesk.Localization.Domain;
@@ -107,6 +108,18 @@ namespace TicketDesk.Domain.Model
         /// </summary>
         /// <value>The list display order.</value>
         public int ListMenuDisplayOrder { get; set; }
+
+        public DateTimeOffset? EndedTicketDateStart
+        {
+            set;
+            get;
+        }
+
+        public DateTimeOffset? EndedTicketDateEnd
+        {
+            set;
+            get;
+        }
 
         /// <summary>
         /// Gets or sets the items per page.

@@ -21,18 +21,21 @@
 @section title{ @Index.Title }
 
 <main style="display: none;">
-    
-        @Html.Partial("_ListMenu", Model.UserListSettings, new ViewDataDictionary
+
+    @Html.Partial("_ListMenu", Model.UserListSettings, new ViewDataDictionary
             {
                 { "CurrentListSettings", Model.CurrentListSetting }
             })
 
-        @Html.Partial("_TicketList", Model)
-   
+    @Html.Partial("_TicketList", Model)
+
 </main>
 
 @section scripts{
     @Scripts.Render("~/bundles/ticketcenter")
+    @Styles.Render("~/content/datepicker")
+    @Scripts.Render("~/bundles/datepicker")
+
     <script type="text/javascript">
 
         $(document).ready(function () {
@@ -42,5 +45,25 @@
             ticketCenter.makeClicky();
         });
 
+
+        $('#FilterBar_EndedTicketDateEnd').datepicker({
+            format: 'dd/mm/yyyy',
+            weekStart: 1,
+            clearBtn: true,
+            language: 'pt-BR',
+            autoclose: true,
+            forceParse: false,
+            calendarWeeks: true
+        });
+
+        $('#FilterBar_EndedTicketDateStart').datepicker({
+            format: 'dd/mm/yyyy',
+            weekStart: 1,
+            clearBtn: true,
+            language: 'pt-BR',
+            autoclose: true,
+            forceParse: false,
+            calendarWeeks: true
+        });
     </script>
 }
