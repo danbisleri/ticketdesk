@@ -163,7 +163,7 @@ namespace TicketDesk.Domain.Model
                 }
 
                 //fColumn.UseEqualityComparison = equality;
-                fColumn.ColumnValue = Convert.ToDateTime(dateStart);//TODO: need an invariant value with Localized display text
+                fColumn.ColumnValue = DateTime.SpecifyKind(Convert.ToDateTime(dateStart), DateTimeKind.Utc); //TODO: need an invariant value with Localized display text
                 fColumn.UseOperatorComparison = ">=";
                 //fColumn.ColumnName = "dateStart";
             }
@@ -197,7 +197,7 @@ namespace TicketDesk.Domain.Model
                 }
 
                 //fColumn.UseEqualityComparison = equality;
-                fColumn.ColumnValue = Convert.ToDateTime(dateEnd);//TODO: need an invariant value with Localized display text
+                fColumn.ColumnValue = DateTime.SpecifyKind(Convert.ToDateTime(dateEnd).AddDays(1), DateTimeKind.Utc);//TODO: need an invariant value with Localized display text
                 fColumn.UseOperatorComparison = "<=";
                 //fColumn.ColumnName = "dateEnd";
                 

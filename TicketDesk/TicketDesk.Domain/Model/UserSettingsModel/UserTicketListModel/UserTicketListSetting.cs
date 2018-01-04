@@ -81,7 +81,7 @@ namespace TicketDesk.Domain.Model
             DisabledFilterColumnNames = (disabledFilterColumnNames) ?? new List<string>();
         }
 
-        public UserTicketListSetting(string listName, string listDisplayName, int listMenuDisplayOrder, int itemsPerPage, List<UserTicketListSortColumn> sortColumns, List<UserTicketListFilterColumn> filterColumns, List<string> disabledFilterColumnNames, DateTimeOffset dateStart , DateTimeOffset dateEnd)
+        public UserTicketListSetting(string listName, string listDisplayName, int listMenuDisplayOrder, int itemsPerPage, List<UserTicketListSortColumn> sortColumns, List<UserTicketListFilterColumn> filterColumns, List<string> disabledFilterColumnNames, string dateStart , string dateEnd)
         {
             ListName = listName;
             ListDisplayName = listDisplayName;
@@ -122,13 +122,13 @@ namespace TicketDesk.Domain.Model
         /// <value>The list display order.</value>
         public int ListMenuDisplayOrder { get; set; }
 
-        public DateTimeOffset? EndedTicketDateStart
+        public string EndedTicketDateStart
         {
             set;
             get;
         }
 
-        public DateTimeOffset? EndedTicketDateEnd
+        public string EndedTicketDateEnd
         {
             set;
             get;
@@ -181,15 +181,17 @@ namespace TicketDesk.Domain.Model
             {
                 FilterColumns.ChangeAssignedFilter(assignedTo);
             }
-            //if (!string.IsNullOrEmpty(dateStart.ToString()))
-            //s{
-                FilterColumns.ChangeDateStartFilter(dateStart);
-            //}
-            //if (!string.IsNullOrEmpty(dateEnd.ToString()))
+            //if (string.IsNullOrEmpty(dateStart.ToString()))
             //{
-                FilterColumns.ChangeDateEndFilter(dateEnd);
+            //    dateStart = DateTime.Now.ToString("dd/MM/yyyy");
             //}
-            
+            //if (string.IsNullOrEmpty(dateEnd.ToString()))
+            //{
+            //    dateEnd = DateTime.Now.ToString("dd/MM/yyyy");
+            //}
+            FilterColumns.ChangeDateStartFilter(dateStart);
+            FilterColumns.ChangeDateEndFilter(dateEnd);
+
         }
 
 
@@ -229,7 +231,7 @@ namespace TicketDesk.Domain.Model
                 unassignedSortColumns.Add(new UserTicketListSortColumn("DueDate", ColumnSortDirection.Ascending));
                 unassignedSortColumns.Add(new UserTicketListSortColumn("LastUpdateDate", ColumnSortDirection.Descending));
                 unassignedFilterColumns.Add(new UserTicketListFilterColumn("TicketStatus", false, TicketStatus.Closed));
-                unassignedFilterColumns.Add(new UserTicketListFilterColumn("AssignedTo", null, null, typeof(string)));
+                unassignedFilterColumns.Add(new UserTicketListFilterColumn("AssignedTo",typeof(string)));
                 settings.Add(new UserTicketListSetting("unassigned", DefaultListName["unassigned"], disOrder++, 20, unassignedSortColumns, unassignedFilterColumns, disableAssignedColumn));
 
                 var assignedToMeSortColumns = new List<UserTicketListSortColumn>();

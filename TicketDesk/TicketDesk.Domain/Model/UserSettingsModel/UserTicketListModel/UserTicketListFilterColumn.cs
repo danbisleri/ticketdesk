@@ -35,6 +35,20 @@ namespace TicketDesk.Domain.Model
             UseEqualityComparison = useEqualityComparison;
         }
 
+        public UserTicketListFilterColumn(string columnName,Type columnValueType)
+        {
+            ColumnName = columnName;
+            ColumnValueType = columnValueType;
+        }
+
+        public UserTicketListFilterColumn(string columnName, string useOperatorComparison, object columnValue, Type columnValueType)
+        {
+            ColumnName = columnName;
+            ColumnValue = columnValue;
+            ColumnValueType = columnValueType;
+            UseOperatorComparison = useOperatorComparison;
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="UserTicketListFilterColumn"/> class.
         /// </summary>

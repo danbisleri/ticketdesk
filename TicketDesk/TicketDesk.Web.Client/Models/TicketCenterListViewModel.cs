@@ -18,6 +18,7 @@ using PagedList;
 using TicketDesk.Domain;
 using TicketDesk.Domain.Model;
 using TicketDesk.Web.Identity;
+using System;
 
 namespace TicketDesk.Web.Client.Models
 {
@@ -34,7 +35,8 @@ namespace TicketDesk.Web.Client.Models
                 UserListSettings = userSettings.ListSettings.OrderBy(
                         lp => lp.ListMenuDisplayOrder),
                 CurrentPage = currentPage,
-                CurrentListSetting = userSettings.GetUserListSettingByName(listName)
+                CurrentListSetting = userSettings.GetUserListSettingByName(listName),
+                
             };
 
 
@@ -70,6 +72,7 @@ namespace TicketDesk.Web.Client.Models
             {
                 filterColumns.Add(new UserTicketListFilterColumn("ProjectId", true, projectId));
             }
+           
 
             DisplayProjects = context.Projects.Count() > 1;
 

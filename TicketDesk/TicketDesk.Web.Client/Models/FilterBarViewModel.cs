@@ -36,15 +36,33 @@ namespace TicketDesk.Web.Client.Models
             UserManager = DependencyResolver.Current.GetService<TicketDeskUserManager>();
         }
 
-        public DateTimeOffset? GetEndedTicketDateEnd()
+        public string GetEndedTicketDateStart()
         {
-            return CurrentListSetting.EndedTicketDateEnd;
+            var dateStart = string.Empty;
+            var fColumn = CurrentListSetting.FilterColumns.SingleOrDefault(fc => fc.ColumnName == "DateStart");
+            if (fColumn != null)
+            {
+                dateStart = Convert.ToDateTime(fColumn.ColumnValue.ToString()).ToString("dd/MM/yyyy");
+            }
+            //else
+            //{
+            //    dateStart = DateTime.Now.ToString("dd/MM/yyyy");
+            //}
+            return dateStart;
         }
 
-        public DateTimeOffset? GetEndedTicketDateStart()
+        public string GetEndedTicketDateEnd()
         {
-            return CurrentListSetting.EndedTicketDateStart;
+            var dateEnd = string.Empty;
+            var fColumn = CurrentListSetting.FilterColumns.SingleOrDefault(fc => fc.ColumnName == "DateEnd");
+            if (fColumn != null)
+            {
+                dateEnd= Convert.ToDateTime(fColumn.ColumnValue.ToString()).ToString("dd/MM/yyyy");
+            }
+            return dateEnd;
         }
+
+        
 
         //TODO: Refactor all selectlists here to use the select list extensions B
 
@@ -59,7 +77,9 @@ namespace TicketDesk.Web.Client.Models
                         new {Text = "20", Value = "20"},
                         new {Text = "30", Value = "30"},
                         new {Text = "50", Value = "50"},
-                        new {Text = "100", Value = "100"}
+                        new {Text = "100", Value = "100"},
+                        new {Text = "200", Value = "200"},
+                        new {Text = "500", Value = "500"}
                     },
                     "Value",
                     "Text",
