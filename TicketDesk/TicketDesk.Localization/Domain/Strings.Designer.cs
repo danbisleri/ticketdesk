@@ -160,6 +160,15 @@ namespace TicketDesk.Localization.Domain {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Report.
+        /// </summary>
+        public static string DefaultListNameReportTickets {
+            get {
+                return ResourceManager.GetString("DefaultListNameReportTickets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Unassigned.
         /// </summary>
         public static string DefaultListNameUnassigned {

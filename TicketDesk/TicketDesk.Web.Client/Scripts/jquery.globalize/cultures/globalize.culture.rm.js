@@ -15,9 +15,9 @@
 
 var Globalize;
 
-if ( typeof require !== "undefined"
-	&& typeof exports !== "undefined"
-	&& typeof module !== "undefined" ) {
+if ( typeof require !== "undefined" &&
+	typeof exports !== "undefined" &&
+	typeof module !== "undefined" ) {
 	// Assume CommonJS
 	Globalize = require( "globalize" );
 } else {
@@ -32,6 +32,9 @@ Globalize.addCultureInfo( "rm", "default", {
 	language: "rm",
 	numberFormat: {
 		",": "'",
+		"NaN": "betg def.",
+		negativeInfinity: "-infinit",
+		positiveInfinity: "+infinit",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": "'"

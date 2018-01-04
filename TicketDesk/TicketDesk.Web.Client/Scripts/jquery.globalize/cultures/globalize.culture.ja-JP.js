@@ -15,9 +15,9 @@
 
 var Globalize;
 
-if ( typeof require !== "undefined"
-	&& typeof exports !== "undefined"
-	&& typeof module !== "undefined" ) {
+if ( typeof require !== "undefined" &&
+	typeof exports !== "undefined" &&
+	typeof module !== "undefined" ) {
 	// Assume CommonJS
 	Globalize = require( "globalize" );
 } else {
@@ -31,6 +31,9 @@ Globalize.addCultureInfo( "ja-JP", "default", {
 	nativeName: "日本語 (日本)",
 	language: "ja",
 	numberFormat: {
+		"NaN": "NaN (非数値)",
+		negativeInfinity: "-∞",
+		positiveInfinity: "+∞",
 		percent: {
 			pattern: ["-n%","n%"]
 		},

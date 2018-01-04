@@ -422,4 +422,7 @@
   <data name="TicketDueDateShort" xml:space="preserve">
     <value>Due</value>
   </data>
+  <data name="DefaultListNameReportTickets" xml:space="preserve">
+    <value>Report</value>
+  </data>
 </root>

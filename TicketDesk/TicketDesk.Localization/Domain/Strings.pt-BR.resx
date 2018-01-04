@@ -422,4 +422,7 @@
   <data name="TicketDueDateShort" xml:space="preserve">
     <value>Data de Vencimento</value>
   </data>
+  <data name="DefaultListNameReportTickets" xml:space="preserve">
+    <value>Relatório</value>
+  </data>
 </root>

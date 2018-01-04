@@ -15,9 +15,9 @@
 
 var Globalize;
 
-if ( typeof require !== "undefined"
-	&& typeof exports !== "undefined"
-	&& typeof module !== "undefined" ) {
+if ( typeof require !== "undefined" &&
+	typeof exports !== "undefined" &&
+	typeof module !== "undefined" ) {
 	// Assume CommonJS
 	Globalize = require( "globalize" );
 } else {
@@ -26,6 +26,7 @@ if ( typeof require !== "undefined"
 }
 
 Globalize.addCultureInfo( "en-US", "default", {
+	name: "en-US",
 	englishName: "English (United States)"
 });
 

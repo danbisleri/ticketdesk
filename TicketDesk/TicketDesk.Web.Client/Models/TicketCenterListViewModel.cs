@@ -35,7 +35,7 @@ namespace TicketDesk.Web.Client.Models
                         lp => lp.ListMenuDisplayOrder),
                 CurrentPage = currentPage,
                 CurrentListSetting = userSettings.GetUserListSettingByName(listName)
-        };
+            };
 
 
             vm.Tickets = await vm.ListTicketsAsync(currentPage, context);

@@ -11,6 +11,7 @@
 // attribution must remain intact, and a copy of the license must be 
 // provided to the recipient.
 
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -66,20 +67,45 @@ namespace TicketDesk.Web.Client.Controllers
             int pageSize,
             string ticketStatus,
             string owner,
-            string assignedTo)
+            string assignedTo,
+            string dateStart,
+            string dateEnd)
         {
             var uId = Context.SecurityProvider.CurrentUserId;
             var userSetting = await Context.UserSettingsManager.GetSettingsForUserAsync(uId);
 
             var currentListSetting = userSetting.GetUserListSettingByName(listName);
 
-            currentListSetting.ModifyFilterSettings(pageSize, ticketStatus, owner, assignedTo);
-            
+            currentListSetting.ModifyFilterSettings(pageSize, ticketStatus, owner, assignedTo, dateStart, dateEnd);
+
             await Context.SaveChangesAsync();
 
             return await GetTicketListPartial(null, listName);
 
         }
+
+
+
+        //[Route("filterList/{listName=opentickets}/{page:int?}")]
+        //public async Task<PartialViewResult> FilterList(
+        //    string listName,
+        //    int pageSize,
+        //    string ticketStatus,
+        //    string owner,
+        //    string assignedTo)
+        //{
+        //    var uId = Context.SecurityProvider.CurrentUserId;
+        //    var userSetting = await Context.UserSettingsManager.GetSettingsForUserAsync(uId);
+
+        //    var currentListSetting = userSetting.GetUserListSettingByName(listName);
+
+        //    currentListSetting.ModifyFilterSettings(pageSize, ticketStatus, owner, assignedTo);
+
+        //    await Context.SaveChangesAsync();
+
+        //    return await GetTicketListPartial(null, listName);
+
+        //}
 
         [Route("sortList/{listName=opentickets}/{page:int?}")]
         public async Task<PartialViewResult> SortList(

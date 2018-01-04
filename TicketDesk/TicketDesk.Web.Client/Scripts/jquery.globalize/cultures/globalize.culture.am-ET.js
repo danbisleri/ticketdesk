@@ -15,9 +15,9 @@
 
 var Globalize;
 
-if ( typeof require !== "undefined"
-	&& typeof exports !== "undefined"
-	&& typeof module !== "undefined" ) {
+if ( typeof require !== "undefined" &&
+	typeof exports !== "undefined" &&
+	typeof module !== "undefined" ) {
 	// Assume CommonJS
 	Globalize = require( "globalize" );
 } else {
@@ -33,6 +33,7 @@ Globalize.addCultureInfo( "am-ET", "default", {
 	numberFormat: {
 		decimals: 1,
 		groupSizes: [3,0],
+		"NaN": "NAN",
 		percent: {
 			pattern: ["-n%","n%"],
 			decimals: 1,

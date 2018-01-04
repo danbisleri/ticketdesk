@@ -27,7 +27,17 @@
                 { "CurrentListSettings", Model.CurrentListSetting }
             })
 
-    @Html.Partial("_TicketList", Model)
+    @if (Request.Url.ToString().ToLower().Contains("reporttickets")
+                        || Request.Url.ToString().ToLower().Contains("historytickets"))
+    {
+        <div class="panel panel-default">
+            <div class="panel-heading row-no-padding" >
+                @Html.Partial("_FilterBar")
+            </div>
+        </div>
+     }
+
+     @Html.Partial("_TicketList", Model)
 
 </main>
 
@@ -35,6 +45,7 @@
     @Scripts.Render("~/bundles/ticketcenter")
     @Styles.Render("~/content/datepicker")
     @Scripts.Render("~/bundles/datepicker")
+    @Scripts.Render("~/bundles/datepicker_pt_br")
 
     <script type="text/javascript">
 
@@ -43,27 +54,30 @@
             $.ajaxSetup({ cache: false });
             ticketCenter.filters.setupFilterForm();
             ticketCenter.makeClicky();
-        });
+        });    
 
-
-        $('#FilterBar_EndedTicketDateEnd').datepicker({
-            format: 'dd/mm/yyyy',
-            weekStart: 1,
-            clearBtn: true,
-            language: 'pt-BR',
-            autoclose: true,
-            forceParse: false,
-            calendarWeeks: true
+        //$(function () {
+        //    $('.datepicker').datepicker({ autoclose: true, clearBtn: true });
+        //});
+        
+        $(function () {
+            $('.datepicker').datepicker({
+                format: 'dd/mm/yyyy',
+                clearBtn: true,
+                language: 'pt-BR',
+                autoclose: true
+            });
         });
-
-        $('#FilterBar_EndedTicketDateStart').datepicker({
-            format: 'dd/mm/yyyy',
-            weekStart: 1,
-            clearBtn: true,
-            language: 'pt-BR',
-            autoclose: true,
-            forceParse: false,
-            calendarWeeks: true
-        });
+        
+        
+        //$('#dateStart').datepicker({
+        //    format: 'dd/mm/yyyy',
+        //    weekStart: 1,
+        //    clearBtn: true,
+        //    language: 'pt-BR',
+        //    autoclose: true,
+        //    forceParse: false,
+        //    calendarWeeks: true
+        //});
     </script>
 }

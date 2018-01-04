@@ -13,6 +13,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace TicketDesk.Domain.Model
 {
@@ -134,6 +135,75 @@ namespace TicketDesk.Domain.Model
                 }
 
             }
+        }
+
+        internal static void ChangeDateStartFilter(this ICollection<UserTicketListFilterColumn> filters, string dateStart)
+        {
+           
+            var fColumn = filters.SingleOrDefault(fc => fc.ColumnName == "DateStart");
+
+            if (string.IsNullOrEmpty(dateStart.ToString()))//TODO: need an invariant value with Localized display text
+            {
+                //if (fColumn != null)
+                //{
+                    filters.Remove(fColumn);
+                //}
+            }
+            else
+            {
+                //bool equality = (dateStart != "Open");//TODO: need an invariant value with Localized display text
+                if (fColumn == null)
+                {
+                    fColumn = new UserTicketListFilterColumn("DateStart")
+                    {
+                        //enum, doesn't matter which value we call gettype from
+                        ColumnValueType = typeof(DateTimeOffset)
+                    };
+                    filters.Add(fColumn);
+                }
+
+                //fColumn.UseEqualityComparison = equality;
+                fColumn.ColumnValue = Convert.ToDateTime(dateStart);//TODO: need an invariant value with Localized display text
+                fColumn.UseOperatorComparison = ">=";
+                //fColumn.ColumnName = "dateStart";
+            }
+
+            
+        }
+
+        internal static void ChangeDateEndFilter(this ICollection<UserTicketListFilterColumn> filters, string dateEnd)
+        {
+
+            var fColumn = filters.SingleOrDefault(fc => fc.ColumnName == "DateEnd");
+
+            if (string.IsNullOrEmpty(dateEnd.ToString()))//TODO: need an invariant value with Localized display text
+            {
+                //if (fColumn == null)
+                //{
+                    filters.Remove(fColumn);
+                //}
+            }
+            else
+            {
+                //bool equality = (dateStart != "Open");//TODO: need an invariant value with Localized display text
+                if (fColumn == null)
+                {
+                    fColumn = new UserTicketListFilterColumn("DateEnd")
+                    {
+                        //enum, doesn't matter which value we call gettype from
+                        ColumnValueType = typeof(DateTimeOffset)
+                    };
+                    filters.Add(fColumn);
+                }
+
+                //fColumn.UseEqualityComparison = equality;
+                fColumn.ColumnValue = Convert.ToDateTime(dateEnd);//TODO: need an invariant value with Localized display text
+                fColumn.UseOperatorComparison = "<=";
+                //fColumn.ColumnName = "dateEnd";
+                
+            }
+
+
         }
     }
 }

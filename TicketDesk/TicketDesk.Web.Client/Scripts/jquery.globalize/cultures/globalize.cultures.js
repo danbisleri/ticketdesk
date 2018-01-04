@@ -15,9 +15,9 @@
 
 var Globalize;
 
-if ( typeof require !== "undefined"
-	&& typeof exports !== "undefined"
-	&& typeof module !== "undefined" ) {
+if ( typeof require !== "undefined" &&
+	typeof exports !== "undefined" &&
+	typeof module !== "undefined" ) {
 	// Assume CommonJS
 	Globalize = require( "globalize" );
 } else {
@@ -33,9 +33,12 @@ Globalize.addCultureInfo( "ar", "default", {
 	isRTL: true,
 	numberFormat: {
 		pattern: ["n-"],
+		"NaN": "ليس برقم",
+		negativeInfinity: "-لا نهاية",
+		positiveInfinity: "+لا نهاية",
 		currency: {
 			pattern: ["$n-","$ n"],
-			symbol: "ر.س.‏"
+			symbol: "ر.س.\u200f"
 		}
 	},
 	calendars: {
@@ -459,6 +462,8 @@ Globalize.addCultureInfo( "bg", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		negativeInfinity: "- безкрайност",
+		positiveInfinity: "+ безкрайност",
 		percent: {
 			",": " ",
 			".": ","
@@ -508,6 +513,9 @@ Globalize.addCultureInfo( "ca", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinit",
+		positiveInfinity: "Infinit",
 		percent: {
 			",": ".",
 			".": ","
@@ -554,6 +562,9 @@ Globalize.addCultureInfo( "zh-Hans", "default", {
 	nativeName: "中文(简体)",
 	language: "zh-Hans",
 	numberFormat: {
+		"NaN": "非数字",
+		negativeInfinity: "负无穷大",
+		positiveInfinity: "正无穷大",
 		percent: {
 			pattern: ["-n%","n%"]
 		},
@@ -598,6 +609,9 @@ Globalize.addCultureInfo( "cs", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "Není číslo",
+		negativeInfinity: "-nekonečno",
+		positiveInfinity: "+nekonečno",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": " ",
@@ -652,6 +666,8 @@ Globalize.addCultureInfo( "da", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-INF",
+		positiveInfinity: "INF",
 		percent: {
 			",": ".",
 			".": ","
@@ -700,6 +716,9 @@ Globalize.addCultureInfo( "de", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "n. def.",
+		negativeInfinity: "-unendlich",
+		positiveInfinity: "+unendlich",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -750,6 +769,9 @@ Globalize.addCultureInfo( "el", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "μη αριθμός",
+		negativeInfinity: "-Άπειρο",
+		positiveInfinity: "Άπειρο",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -801,6 +823,9 @@ Globalize.addCultureInfo( "es", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		percent: {
 			",": ".",
 			".": ","
@@ -849,6 +874,8 @@ Globalize.addCultureInfo( "fi", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		negativeInfinity: "-INF",
+		positiveInfinity: "INF",
 		percent: {
 			",": " ",
 			".": ","
@@ -897,6 +924,9 @@ Globalize.addCultureInfo( "fr", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "Non Numérique",
+		negativeInfinity: "-Infini",
+		positiveInfinity: "+Infini",
 		percent: {
 			",": " ",
 			".": ","
@@ -944,6 +974,9 @@ Globalize.addCultureInfo( "he", "default", {
 	language: "he",
 	isRTL: true,
 	numberFormat: {
+		"NaN": "לא מספר",
+		negativeInfinity: "אינסוף שלילי",
+		positiveInfinity: "אינסוף חיובי",
 		percent: {
 			pattern: ["-n%","n%"]
 		},
@@ -1011,6 +1044,9 @@ Globalize.addCultureInfo( "hu", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "nem szám",
+		negativeInfinity: "negatív végtelen",
+		positiveInfinity: "végtelen",
 		percent: {
 			",": " ",
 			".": ","
@@ -1060,6 +1096,8 @@ Globalize.addCultureInfo( "is", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-INF",
+		positiveInfinity: "INF",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -1110,6 +1148,9 @@ Globalize.addCultureInfo( "it", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "Non un numero reale",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "+Infinito",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -1157,6 +1198,9 @@ Globalize.addCultureInfo( "ja", "default", {
 	nativeName: "日本語",
 	language: "ja",
 	numberFormat: {
+		"NaN": "NaN (非数値)",
+		negativeInfinity: "-∞",
+		positiveInfinity: "+∞",
 		percent: {
 			pattern: ["-n%","n%"]
 		},
@@ -1344,6 +1388,8 @@ Globalize.addCultureInfo( "no", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		negativeInfinity: "-INF",
+		positiveInfinity: "INF",
 		percent: {
 			",": " ",
 			".": ","
@@ -1392,6 +1438,9 @@ Globalize.addCultureInfo( "pl", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "nie jest liczbą",
+		negativeInfinity: "-nieskończoność",
+		positiveInfinity: "+nieskończoność",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": " ",
@@ -1445,6 +1494,9 @@ Globalize.addCultureInfo( "pt", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "NaN (Não é um número)",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "+Infinito",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -1492,6 +1544,9 @@ Globalize.addCultureInfo( "rm", "default", {
 	language: "rm",
 	numberFormat: {
 		",": "'",
+		"NaN": "betg def.",
+		negativeInfinity: "-infinit",
+		positiveInfinity: "+infinit",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": "'"
@@ -1588,6 +1643,8 @@ Globalize.addCultureInfo( "ru", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		negativeInfinity: "-бесконечность",
+		positiveInfinity: "бесконечность",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": " ",
@@ -1693,6 +1750,9 @@ Globalize.addCultureInfo( "sk", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "Nie je číslo",
+		negativeInfinity: "-nekonečno",
+		positiveInfinity: "+nekonečno",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": " ",
@@ -1747,6 +1807,8 @@ Globalize.addCultureInfo( "sq", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-infinit",
+		positiveInfinity: "infinit",
 		percent: {
 			",": ".",
 			".": ","
@@ -1794,6 +1856,8 @@ Globalize.addCultureInfo( "sv", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		negativeInfinity: "-INF",
+		positiveInfinity: "INF",
 		percent: {
 			",": " ",
 			".": ","
@@ -2129,6 +2193,8 @@ Globalize.addCultureInfo( "uk", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		negativeInfinity: "-безмежність",
+		positiveInfinity: "безмежність",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": " ",
@@ -2234,6 +2300,8 @@ Globalize.addCultureInfo( "sl", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-neskončnost",
+		positiveInfinity: "neskončnost",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -2283,6 +2351,9 @@ Globalize.addCultureInfo( "et", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "avaldamatu",
+		negativeInfinity: "miinuslõpmatus",
+		positiveInfinity: "plusslõpmatus",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": " ",
@@ -2331,6 +2402,8 @@ Globalize.addCultureInfo( "lv", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		negativeInfinity: "-bezgalība",
+		positiveInfinity: "bezgalība",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": " ",
@@ -2384,6 +2457,8 @@ Globalize.addCultureInfo( "lt", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-begalybė",
+		positiveInfinity: "begalybė",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -2438,6 +2513,8 @@ Globalize.addCultureInfo( "tg", "default", {
 		",": " ",
 		".": ",",
 		groupSizes: [3,0],
+		negativeInfinity: "-бесконечность",
+		positiveInfinity: "бесконечность",
 		percent: {
 			pattern: ["-n%","n%"],
 			groupSizes: [3,0],
@@ -2755,7 +2832,7 @@ Globalize.addCultureInfo( "hy", "default", {
 Globalize.addCultureInfo( "az", "default", {
 	name: "az",
 	englishName: "Azeri",
-	nativeName: "Azərbaycan­ılı",
+	nativeName: "Azərbaycan\xadılı",
 	language: "az",
 	numberFormat: {
 		",": " ",
@@ -2813,6 +2890,9 @@ Globalize.addCultureInfo( "eu", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "EdZ",
+		negativeInfinity: "-Infinitu",
+		positiveInfinity: "Infinitu",
 		percent: {
 			",": ".",
 			".": ","
@@ -2860,6 +2940,9 @@ Globalize.addCultureInfo( "hsb", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "njedefinowane",
+		negativeInfinity: "-njekónčne",
+		positiveInfinity: "+njekónčne",
 		percent: {
 			",": ".",
 			".": ","
@@ -3162,6 +3245,8 @@ Globalize.addCultureInfo( "fo", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-INF",
+		positiveInfinity: "INF",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -3549,6 +3634,8 @@ Globalize.addCultureInfo( "tk", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		negativeInfinity: "-üznüksizlik",
+		positiveInfinity: "üznüksizlik",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": " ",
@@ -3850,8 +3937,8 @@ Globalize.addCultureInfo( "or", "default", {
 				namesShort: ["ର","ସୋ","ମ","ବୁ","ଗୁ","ଶୁ","ଶ"]
 			},
 			months: {
-				names: ["ଜାନୁୟାରୀ","ଫ୍ରେବୃୟାରୀ","ମାର୍ଚ୍ଚ","ଏପ୍ରିଲ୍‌","ମେ","ଜୁନ୍‌","ଜୁଲାଇ","ଅଗଷ୍ଟ","ସେପ୍ଟେମ୍ବର","ଅକ୍ଟୋବର","ନଭେମ୍ବର","(ଡିସେମ୍ବର",""],
-				namesAbbr: ["ଜାନୁୟାରୀ","ଫ୍ରେବୃୟାରୀ","ମାର୍ଚ୍ଚ","ଏପ୍ରିଲ୍‌","ମେ","ଜୁନ୍‌","ଜୁଲାଇ","ଅଗଷ୍ଟ","ସେପ୍ଟେମ୍ବର","ଅକ୍ଟୋବର","ନଭେମ୍ବର","(ଡିସେମ୍ବର",""]
+				names: ["ଜାନୁୟାରୀ","ଫ୍ରେବୃୟାରୀ","ମାର୍ଚ୍ଚ","ଏପ୍ରିଲ୍\u200c","ମେ","ଜୁନ୍\u200c","ଜୁଲାଇ","ଅଗଷ୍ଟ","ସେପ୍ଟେମ୍ବର","ଅକ୍ଟୋବର","ନଭେମ୍ବର","(ଡିସେମ୍ବର",""],
+				namesAbbr: ["ଜାନୁୟାରୀ","ଫ୍ରେବୃୟାରୀ","ମାର୍ଚ୍ଚ","ଏପ୍ରିଲ୍\u200c","ମେ","ଜୁନ୍\u200c","ଜୁଲାଇ","ଅଗଷ୍ଟ","ସେପ୍ଟେମ୍ବର","ଅକ୍ଟୋବର","ନଭେମ୍ବର","(ଡିସେମ୍ବର",""]
 			},
 			eras: [{"name":"ଖ୍ରୀଷ୍ଟାବ୍ଦ","start":null,"offset":0}],
 			patterns: {
@@ -4051,6 +4138,9 @@ Globalize.addCultureInfo( "as", "default", {
 	language: "as",
 	numberFormat: {
 		groupSizes: [3,2],
+		"NaN": "nan",
+		negativeInfinity: "-infinity",
+		positiveInfinity: "infinity",
 		percent: {
 			pattern: ["-n%","n%"],
 			groupSizes: [3,2]
@@ -4237,6 +4327,9 @@ Globalize.addCultureInfo( "bo", "default", {
 	language: "bo",
 	numberFormat: {
 		groupSizes: [3,0],
+		"NaN": "ཨང་ཀི་མིན་པ།",
+		negativeInfinity: "མོ་གྲངས་ཚད་མེད་ཆུང་བ།",
+		positiveInfinity: "ཕོ་གྲངས་ཚད་མེད་ཆེ་བ།",
 		percent: {
 			pattern: ["-n%","n%"],
 			groupSizes: [3,0]
@@ -4326,6 +4419,9 @@ Globalize.addCultureInfo( "km", "default", {
 	numberFormat: {
 		pattern: ["- n"],
 		groupSizes: [3,0],
+		"NaN": "NAN",
+		negativeInfinity: "-- អនន្ត",
+		positiveInfinity: "អនន្ត",
 		percent: {
 			pattern: ["-n%","n%"],
 			groupSizes: [3,0]
@@ -4438,6 +4534,9 @@ Globalize.addCultureInfo( "gl", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		percent: {
 			",": ".",
 			".": ","
@@ -4531,7 +4630,7 @@ Globalize.addCultureInfo( "syr", "default", {
 	numberFormat: {
 		currency: {
 			pattern: ["$n-","$ n"],
-			symbol: "ل.س.‏"
+			symbol: "ل.س.\u200f"
 		}
 	},
 	calendars: {
@@ -4539,12 +4638,12 @@ Globalize.addCultureInfo( "syr", "default", {
 			firstDay: 6,
 			days: {
 				names: ["ܚܕ ܒܫܒܐ","ܬܪܝܢ ܒܫܒܐ","ܬܠܬܐ ܒܫܒܐ","ܐܪܒܥܐ ܒܫܒܐ","ܚܡܫܐ ܒܫܒܐ","ܥܪܘܒܬܐ","ܫܒܬܐ"],
-				namesAbbr: ["܏ܐ ܏ܒܫ","܏ܒ ܏ܒܫ","܏ܓ ܏ܒܫ","܏ܕ ܏ܒܫ","܏ܗ ܏ܒܫ","܏ܥܪܘܒ","܏ܫܒ"],
+				namesAbbr: ["\u070fܐ \u070fܒܫ","\u070fܒ \u070fܒܫ","\u070fܓ \u070fܒܫ","\u070fܕ \u070fܒܫ","\u070fܗ \u070fܒܫ","\u070fܥܪܘܒ","\u070fܫܒ"],
 				namesShort: ["ܐ","ܒ","ܓ","ܕ","ܗ","ܥ","ܫ"]
 			},
 			months: {
 				names: ["ܟܢܘܢ ܐܚܪܝ","ܫܒܛ","ܐܕܪ","ܢܝܣܢ","ܐܝܪ","ܚܙܝܪܢ","ܬܡܘܙ","ܐܒ","ܐܝܠܘܠ","ܬܫܪܝ ܩܕܝܡ","ܬܫܪܝ ܐܚܪܝ","ܟܢܘܢ ܩܕܝܡ",""],
-				namesAbbr: ["܏ܟܢ ܏ܒ","ܫܒܛ","ܐܕܪ","ܢܝܣܢ","ܐܝܪ","ܚܙܝܪܢ","ܬܡܘܙ","ܐܒ","ܐܝܠܘܠ","܏ܬܫ ܏ܐ","܏ܬܫ ܏ܒ","܏ܟܢ ܏ܐ",""]
+				namesAbbr: ["\u070fܟܢ \u070fܒ","ܫܒܛ","ܐܕܪ","ܢܝܣܢ","ܐܝܪ","ܚܙܝܪܢ","ܬܡܘܙ","ܐܒ","ܐܝܠܘܠ","\u070fܬܫ \u070fܐ","\u070fܬܫ \u070fܒ","\u070fܟܢ \u070fܐ",""]
 			},
 			AM: ["ܩ.ܛ","ܩ.ܛ","ܩ.ܛ"],
 			PM: ["ܒ.ܛ","ܒ.ܛ","ܒ.ܛ"],
@@ -4568,6 +4667,8 @@ Globalize.addCultureInfo( "si", "default", {
 	language: "si",
 	numberFormat: {
 		groupSizes: [3,2],
+		negativeInfinity: "-අනන්තය",
+		positiveInfinity: "අනන්තය",
 		percent: {
 			groupSizes: [3,2]
 		},
@@ -4581,17 +4682,17 @@ Globalize.addCultureInfo( "si", "default", {
 			"/": "-",
 			firstDay: 1,
 			days: {
-				names: ["ඉරිදා","සඳුදා","අඟහරුවාදා","බදාදා","බ්‍රහස්පතින්දා","සිකුරාදා","සෙනසුරාදා"],
+				names: ["ඉරිදා","සඳුදා","අඟහරුවාදා","බදාදා","බ්\u200dරහස්පතින්දා","සිකුරාදා","සෙනසුරාදා"],
 				namesAbbr: ["ඉරිදා","සඳුදා","කුජදා","බුදදා","ගුරුදා","කිවිදා","ශනිදා"],
-				namesShort: ["ඉ","ස","අ","බ","බ්‍ර","සි","සෙ"]
+				namesShort: ["ඉ","ස","අ","බ","බ්\u200dර","සි","සෙ"]
 			},
 			months: {
-				names: ["ජනවාරි","පෙබරවාරි","මාර්තු","අ‌ප්‍රේල්","මැයි","ජූනි","ජූලි","අ‌ගෝස්තු","සැප්තැම්බර්","ඔක්තෝබර්","නොවැම්බර්","දෙසැම්බර්",""],
-				namesAbbr: ["ජන.","පෙබ.","මාර්තු.","අප්‍රේල්.","මැයි.","ජූනි.","ජූලි.","අගෝ.","සැප්.","ඔක්.","නොවැ.","දෙසැ.",""]
+				names: ["ජනවාරි","පෙබරවාරි","මාර්තු","අ\u200cප්\u200dරේල්","මැයි","ජූනි","ජූලි","අ\u200cගෝස්තු","සැප්තැම්බර්","ඔක්තෝබර්","නොවැම්බර්","දෙසැම්බර්",""],
+				namesAbbr: ["ජන.","පෙබ.","මාර්තු.","අප්\u200dරේල්.","මැයි.","ජූනි.","ජූලි.","අගෝ.","සැප්.","ඔක්.","නොවැ.","දෙසැ.",""]
 			},
 			AM: ["පෙ.ව.","පෙ.ව.","පෙ.ව."],
 			PM: ["ප.ව.","ප.ව.","ප.ව."],
-			eras: [{"name":"ක්‍රි.ව.","start":null,"offset":0}],
+			eras: [{"name":"ක්\u200dරි.ව.","start":null,"offset":0}],
 			patterns: {
 				d: "yyyy-MM-dd",
 				D: "yyyy MMMM' මස 'dd' වැනිදා 'dddd",
@@ -4643,6 +4744,7 @@ Globalize.addCultureInfo( "am", "default", {
 	numberFormat: {
 		decimals: 1,
 		groupSizes: [3,0],
+		"NaN": "NAN",
 		percent: {
 			pattern: ["-n%","n%"],
 			decimals: 1,
@@ -4689,6 +4791,9 @@ Globalize.addCultureInfo( "tzm", "default", {
 		pattern: ["n-"],
 		",": ".",
 		".": ",",
+		"NaN": "Non Numérique",
+		negativeInfinity: "-Infini",
+		positiveInfinity: "+Infini",
 		percent: {
 			",": ".",
 			".": ","
@@ -4733,6 +4838,9 @@ Globalize.addCultureInfo( "ne", "default", {
 	language: "ne",
 	numberFormat: {
 		groupSizes: [3,2],
+		"NaN": "nan",
+		negativeInfinity: "-infinity",
+		positiveInfinity: "infinity",
 		percent: {
 			pattern: ["-n%","n%"],
 			groupSizes: [3,2]
@@ -4821,6 +4929,9 @@ Globalize.addCultureInfo( "ps", "default", {
 		pattern: ["n-"],
 		",": "،",
 		".": ",",
+		"NaN": "غ ع",
+		negativeInfinity: "-∞",
+		positiveInfinity: "∞",
 		percent: {
 			pattern: ["%n-","%n"],
 			",": "،",
@@ -4933,8 +5044,8 @@ Globalize.addCultureInfo( "ps", "default", {
 		Gregorian_Localized: {
 			firstDay: 6,
 			days: {
-				names: ["یکشنبه","دوشنبه","سه‌شنبه","چارشنبه","پنجشنبه","جمعه","شنبه"],
-				namesAbbr: ["یکشنبه","دوشنبه","سه‌شنبه","چارشنبه","پنجشنبه","جمعه","شنبه"],
+				names: ["یکشنبه","دوشنبه","سه\u200cشنبه","چارشنبه","پنجشنبه","جمعه","شنبه"],
+				namesAbbr: ["یکشنبه","دوشنبه","سه\u200cشنبه","چارشنبه","پنجشنبه","جمعه","شنبه"],
 				namesShort: ["ی","د","س","چ","پ","ج","ش"]
 			},
 			months: {
@@ -5276,6 +5387,8 @@ Globalize.addCultureInfo( "ba", "default", {
 		",": " ",
 		".": ",",
 		groupSizes: [3,0],
+		negativeInfinity: "-бесконечность",
+		positiveInfinity: "бесконечность",
 		percent: {
 			pattern: ["-n%","n%"],
 			groupSizes: [3,0],
@@ -5326,6 +5439,9 @@ Globalize.addCultureInfo( "lb", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "n. num.",
+		negativeInfinity: "-onendlech",
+		positiveInfinity: "+onendlech",
 		percent: {
 			",": " ",
 			".": ","
@@ -5375,6 +5491,8 @@ Globalize.addCultureInfo( "kl", "default", {
 		",": ".",
 		".": ",",
 		groupSizes: [3,0],
+		negativeInfinity: "-INF",
+		positiveInfinity: "INF",
 		percent: {
 			groupSizes: [3,0],
 			",": ".",
@@ -5456,6 +5574,9 @@ Globalize.addCultureInfo( "ii", "default", {
 	language: "ii",
 	numberFormat: {
 		groupSizes: [3,0],
+		"NaN": "ꌗꂷꀋꉬ",
+		negativeInfinity: "ꀄꊭꌐꀋꉆ",
+		positiveInfinity: "ꈤꇁꑖꀋꉬ",
 		percent: {
 			pattern: ["-n%","n%"],
 			groupSizes: [3,0]
@@ -5502,6 +5623,9 @@ Globalize.addCultureInfo( "arn", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		percent: {
 			",": ".",
 			".": ","
@@ -5573,6 +5697,9 @@ Globalize.addCultureInfo( "br", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "NkN",
+		negativeInfinity: "-Anfin",
+		positiveInfinity: "+Anfin",
 		percent: {
 			",": " ",
 			".": ","
@@ -5620,6 +5747,9 @@ Globalize.addCultureInfo( "ug", "default", {
 	language: "ug",
 	isRTL: true,
 	numberFormat: {
+		"NaN": "سان ئەمەس",
+		negativeInfinity: "مەنپىي چەكسىزلىك",
+		positiveInfinity: "مۇسبەت چەكسىزلىك",
 		percent: {
 			pattern: ["-n%","n%"]
 		},
@@ -5704,6 +5834,9 @@ Globalize.addCultureInfo( "oc", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "Non Numeric",
+		negativeInfinity: "-Infinit",
+		positiveInfinity: "+Infinit",
 		percent: {
 			",": " ",
 			".": ","
@@ -5756,6 +5889,9 @@ Globalize.addCultureInfo( "co", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "Mica numericu",
+		negativeInfinity: "-Infinitu",
+		positiveInfinity: "+Infinitu",
 		percent: {
 			",": " ",
 			".": ","
@@ -5804,6 +5940,9 @@ Globalize.addCultureInfo( "gsw", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "Ohne Nummer",
+		negativeInfinity: "-Unendlich",
+		positiveInfinity: "+Unendlich",
 		percent: {
 			",": " ",
 			".": ","
@@ -5852,6 +5991,9 @@ Globalize.addCultureInfo( "sah", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "NAN",
+		negativeInfinity: "-бесконечность",
+		positiveInfinity: "бесконечность",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": " ",
@@ -5902,6 +6044,9 @@ Globalize.addCultureInfo( "qut", "default", {
 	nativeName: "K'iche",
 	language: "qut",
 	numberFormat: {
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		currency: {
 			symbol: "Q"
 		}
@@ -5979,6 +6124,9 @@ Globalize.addCultureInfo( "wo", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "Non Numérique",
+		negativeInfinity: "-Infini",
+		positiveInfinity: "+Infini",
 		percent: {
 			",": " ",
 			".": ","
@@ -6029,6 +6177,9 @@ Globalize.addCultureInfo( "prs", "default", {
 		pattern: ["n-"],
 		",": ".",
 		".": ",",
+		"NaN": "غ ع",
+		negativeInfinity: "-∞",
+		positiveInfinity: "∞",
 		percent: {
 			pattern: ["%n-","%n"],
 			",": ".",
@@ -6139,8 +6290,8 @@ Globalize.addCultureInfo( "prs", "default", {
 		Gregorian_Localized: {
 			firstDay: 5,
 			days: {
-				names: ["یکشنبه","دوشنبه","سه‌شنبه","چهارشنبه","پنجشنبه","جمعه","شنبه"],
-				namesAbbr: ["یکشنبه","دوشنبه","سه‌شنبه","چهارشنبه","پنجشنبه","جمعه","شنبه"],
+				names: ["یکشنبه","دوشنبه","سه\u200cشنبه","چهارشنبه","پنجشنبه","جمعه","شنبه"],
+				namesAbbr: ["یکشنبه","دوشنبه","سه\u200cشنبه","چهارشنبه","پنجشنبه","جمعه","شنبه"],
 				namesShort: ["ی","د","س","چ","پ","ج","ش"]
 			},
 			months: {
@@ -6168,6 +6319,8 @@ Globalize.addCultureInfo( "gd", "default", {
 	nativeName: "Gàidhlig",
 	language: "gd",
 	numberFormat: {
+		negativeInfinity: "-Neo-chrìochnachd",
+		positiveInfinity: "Neo-chrìochnachd",
 		currency: {
 			pattern: ["-$n","$n"],
 			symbol: "£"
@@ -6209,9 +6362,12 @@ Globalize.addCultureInfo( "ar-SA", "default", {
 	isRTL: true,
 	numberFormat: {
 		pattern: ["n-"],
+		"NaN": "ليس برقم",
+		negativeInfinity: "-لا نهاية",
+		positiveInfinity: "+لا نهاية",
 		currency: {
 			pattern: ["$n-","$ n"],
-			symbol: "ر.س.‏"
+			symbol: "ر.س.\u200f"
 		}
 	},
 	calendars: {
@@ -6635,6 +6791,8 @@ Globalize.addCultureInfo( "bg-BG", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		negativeInfinity: "- безкрайност",
+		positiveInfinity: "+ безкрайност",
 		percent: {
 			",": " ",
 			".": ","
@@ -6684,6 +6842,9 @@ Globalize.addCultureInfo( "ca-ES", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinit",
+		positiveInfinity: "Infinit",
 		percent: {
 			",": ".",
 			".": ","
@@ -6730,6 +6891,9 @@ Globalize.addCultureInfo( "zh-TW", "default", {
 	nativeName: "中文(台灣)",
 	language: "zh-CHT",
 	numberFormat: {
+		"NaN": "不是一個數字",
+		negativeInfinity: "負無窮大",
+		positiveInfinity: "正無窮大",
 		percent: {
 			pattern: ["-n%","n%"]
 		},
@@ -6800,6 +6964,9 @@ Globalize.addCultureInfo( "cs-CZ", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "Není číslo",
+		negativeInfinity: "-nekonečno",
+		positiveInfinity: "+nekonečno",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": " ",
@@ -6854,6 +7021,8 @@ Globalize.addCultureInfo( "da-DK", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-INF",
+		positiveInfinity: "INF",
 		percent: {
 			",": ".",
 			".": ","
@@ -6902,6 +7071,9 @@ Globalize.addCultureInfo( "de-DE", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "n. def.",
+		negativeInfinity: "-unendlich",
+		positiveInfinity: "+unendlich",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -6952,6 +7124,9 @@ Globalize.addCultureInfo( "el-GR", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "μη αριθμός",
+		negativeInfinity: "-Άπειρο",
+		positiveInfinity: "Άπειρο",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -6996,6 +7171,7 @@ Globalize.addCultureInfo( "el-GR", "default", {
 });
 
 Globalize.addCultureInfo( "en-US", "default", {
+	name: "en-US",
 	englishName: "English (United States)"
 });
 
@@ -7007,6 +7183,8 @@ Globalize.addCultureInfo( "fi-FI", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		negativeInfinity: "-INF",
+		positiveInfinity: "INF",
 		percent: {
 			",": " ",
 			".": ","
@@ -7055,6 +7233,9 @@ Globalize.addCultureInfo( "fr-FR", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "Non Numérique",
+		negativeInfinity: "-Infini",
+		positiveInfinity: "+Infini",
 		percent: {
 			",": " ",
 			".": ","
@@ -7102,6 +7283,9 @@ Globalize.addCultureInfo( "he-IL", "default", {
 	language: "he",
 	isRTL: true,
 	numberFormat: {
+		"NaN": "לא מספר",
+		negativeInfinity: "אינסוף שלילי",
+		positiveInfinity: "אינסוף חיובי",
 		percent: {
 			pattern: ["-n%","n%"]
 		},
@@ -7169,6 +7353,9 @@ Globalize.addCultureInfo( "hu-HU", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "nem szám",
+		negativeInfinity: "negatív végtelen",
+		positiveInfinity: "végtelen",
 		percent: {
 			",": " ",
 			".": ","
@@ -7218,6 +7405,8 @@ Globalize.addCultureInfo( "is-IS", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-INF",
+		positiveInfinity: "INF",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -7268,6 +7457,9 @@ Globalize.addCultureInfo( "it-IT", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "Non un numero reale",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "+Infinito",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -7315,6 +7507,9 @@ Globalize.addCultureInfo( "ja-JP", "default", {
 	nativeName: "日本語 (日本)",
 	language: "ja",
 	numberFormat: {
+		"NaN": "NaN (非数値)",
+		negativeInfinity: "-∞",
+		positiveInfinity: "+∞",
 		percent: {
 			pattern: ["-n%","n%"]
 		},
@@ -7502,6 +7697,8 @@ Globalize.addCultureInfo( "nb-NO", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		negativeInfinity: "-INF",
+		positiveInfinity: "INF",
 		percent: {
 			",": " ",
 			".": ","
@@ -7550,6 +7747,9 @@ Globalize.addCultureInfo( "pl-PL", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "nie jest liczbą",
+		negativeInfinity: "-nieskończoność",
+		positiveInfinity: "+nieskończoność",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": " ",
@@ -7603,6 +7803,9 @@ Globalize.addCultureInfo( "pt-BR", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "NaN (Não é um número)",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "+Infinito",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -7650,6 +7853,9 @@ Globalize.addCultureInfo( "rm-CH", "default", {
 	language: "rm",
 	numberFormat: {
 		",": "'",
+		"NaN": "betg def.",
+		negativeInfinity: "-infinit",
+		positiveInfinity: "+infinit",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": "'"
@@ -7746,6 +7952,8 @@ Globalize.addCultureInfo( "ru-RU", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		negativeInfinity: "-бесконечность",
+		positiveInfinity: "бесконечность",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": " ",
@@ -7851,6 +8059,9 @@ Globalize.addCultureInfo( "sk-SK", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "Nie je číslo",
+		negativeInfinity: "-nekonečno",
+		positiveInfinity: "+nekonečno",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": " ",
@@ -7905,6 +8116,8 @@ Globalize.addCultureInfo( "sq-AL", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-infinit",
+		positiveInfinity: "infinit",
 		percent: {
 			",": ".",
 			".": ","
@@ -7952,6 +8165,8 @@ Globalize.addCultureInfo( "sv-SE", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		negativeInfinity: "-INF",
+		positiveInfinity: "INF",
 		percent: {
 			",": " ",
 			".": ","
@@ -8287,6 +8502,8 @@ Globalize.addCultureInfo( "uk-UA", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		negativeInfinity: "-безмежність",
+		positiveInfinity: "безмежність",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": " ",
@@ -8392,6 +8609,8 @@ Globalize.addCultureInfo( "sl-SI", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-neskončnost",
+		positiveInfinity: "neskončnost",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -8441,6 +8660,9 @@ Globalize.addCultureInfo( "et-EE", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "avaldamatu",
+		negativeInfinity: "miinuslõpmatus",
+		positiveInfinity: "plusslõpmatus",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": " ",
@@ -8489,6 +8711,8 @@ Globalize.addCultureInfo( "lv-LV", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		negativeInfinity: "-bezgalība",
+		positiveInfinity: "bezgalība",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": " ",
@@ -8542,6 +8766,8 @@ Globalize.addCultureInfo( "lt-LT", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-begalybė",
+		positiveInfinity: "begalybė",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -8596,6 +8822,8 @@ Globalize.addCultureInfo( "tg-Cyrl-TJ", "default", {
 		",": " ",
 		".": ",",
 		groupSizes: [3,0],
+		negativeInfinity: "-бесконечность",
+		positiveInfinity: "бесконечность",
 		percent: {
 			pattern: ["-n%","n%"],
 			groupSizes: [3,0],
@@ -8913,7 +9141,7 @@ Globalize.addCultureInfo( "hy-AM", "default", {
 Globalize.addCultureInfo( "az-Latn-AZ", "default", {
 	name: "az-Latn-AZ",
 	englishName: "Azeri (Latin, Azerbaijan)",
-	nativeName: "Azərbaycan­ılı (Azərbaycan)",
+	nativeName: "Azərbaycan\xadılı (Azərbaycan)",
 	language: "az-Latn",
 	numberFormat: {
 		",": " ",
@@ -8971,6 +9199,9 @@ Globalize.addCultureInfo( "eu-ES", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "EdZ",
+		negativeInfinity: "-Infinitu",
+		positiveInfinity: "Infinitu",
 		percent: {
 			",": ".",
 			".": ","
@@ -9018,6 +9249,9 @@ Globalize.addCultureInfo( "hsb-DE", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "njedefinowane",
+		negativeInfinity: "-njekónčne",
+		positiveInfinity: "+njekónčne",
 		percent: {
 			",": ".",
 			".": ","
@@ -9320,6 +9554,8 @@ Globalize.addCultureInfo( "fo-FO", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-INF",
+		positiveInfinity: "INF",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -9668,6 +9904,8 @@ Globalize.addCultureInfo( "tk-TM", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		negativeInfinity: "-üznüksizlik",
+		positiveInfinity: "üznüksizlik",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": " ",
@@ -9969,8 +10207,8 @@ Globalize.addCultureInfo( "or-IN", "default", {
 				namesShort: ["ର","ସୋ","ମ","ବୁ","ଗୁ","ଶୁ","ଶ"]
 			},
 			months: {
-				names: ["ଜାନୁୟାରୀ","ଫ୍ରେବୃୟାରୀ","ମାର୍ଚ୍ଚ","ଏପ୍ରିଲ୍‌","ମେ","ଜୁନ୍‌","ଜୁଲାଇ","ଅଗଷ୍ଟ","ସେପ୍ଟେମ୍ବର","ଅକ୍ଟୋବର","ନଭେମ୍ବର","(ଡିସେମ୍ବର",""],
-				namesAbbr: ["ଜାନୁୟାରୀ","ଫ୍ରେବୃୟାରୀ","ମାର୍ଚ୍ଚ","ଏପ୍ରିଲ୍‌","ମେ","ଜୁନ୍‌","ଜୁଲାଇ","ଅଗଷ୍ଟ","ସେପ୍ଟେମ୍ବର","ଅକ୍ଟୋବର","ନଭେମ୍ବର","(ଡିସେମ୍ବର",""]
+				names: ["ଜାନୁୟାରୀ","ଫ୍ରେବୃୟାରୀ","ମାର୍ଚ୍ଚ","ଏପ୍ରିଲ୍\u200c","ମେ","ଜୁନ୍\u200c","ଜୁଲାଇ","ଅଗଷ୍ଟ","ସେପ୍ଟେମ୍ବର","ଅକ୍ଟୋବର","ନଭେମ୍ବର","(ଡିସେମ୍ବର",""],
+				namesAbbr: ["ଜାନୁୟାରୀ","ଫ୍ରେବୃୟାରୀ","ମାର୍ଚ୍ଚ","ଏପ୍ରିଲ୍\u200c","ମେ","ଜୁନ୍\u200c","ଜୁଲାଇ","ଅଗଷ୍ଟ","ସେପ୍ଟେମ୍ବର","ଅକ୍ଟୋବର","ନଭେମ୍ବର","(ଡିସେମ୍ବର",""]
 			},
 			eras: [{"name":"ଖ୍ରୀଷ୍ଟାବ୍ଦ","start":null,"offset":0}],
 			patterns: {
@@ -10170,6 +10408,9 @@ Globalize.addCultureInfo( "as-IN", "default", {
 	language: "as",
 	numberFormat: {
 		groupSizes: [3,2],
+		"NaN": "nan",
+		negativeInfinity: "-infinity",
+		positiveInfinity: "infinity",
 		percent: {
 			pattern: ["-n%","n%"],
 			groupSizes: [3,2]
@@ -10356,6 +10597,9 @@ Globalize.addCultureInfo( "bo-CN", "default", {
 	language: "bo",
 	numberFormat: {
 		groupSizes: [3,0],
+		"NaN": "ཨང་ཀི་མིན་པ།",
+		negativeInfinity: "མོ་གྲངས་ཚད་མེད་ཆུང་བ།",
+		positiveInfinity: "ཕོ་གྲངས་ཚད་མེད་ཆེ་བ།",
 		percent: {
 			pattern: ["-n%","n%"],
 			groupSizes: [3,0]
@@ -10445,6 +10689,9 @@ Globalize.addCultureInfo( "km-KH", "default", {
 	numberFormat: {
 		pattern: ["- n"],
 		groupSizes: [3,0],
+		"NaN": "NAN",
+		negativeInfinity: "-- អនន្ត",
+		positiveInfinity: "អនន្ត",
 		percent: {
 			pattern: ["-n%","n%"],
 			groupSizes: [3,0]
@@ -10557,6 +10804,9 @@ Globalize.addCultureInfo( "gl-ES", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		percent: {
 			",": ".",
 			".": ","
@@ -10650,7 +10900,7 @@ Globalize.addCultureInfo( "syr-SY", "default", {
 	numberFormat: {
 		currency: {
 			pattern: ["$n-","$ n"],
-			symbol: "ل.س.‏"
+			symbol: "ل.س.\u200f"
 		}
 	},
 	calendars: {
@@ -10658,12 +10908,12 @@ Globalize.addCultureInfo( "syr-SY", "default", {
 			firstDay: 6,
 			days: {
 				names: ["ܚܕ ܒܫܒܐ","ܬܪܝܢ ܒܫܒܐ","ܬܠܬܐ ܒܫܒܐ","ܐܪܒܥܐ ܒܫܒܐ","ܚܡܫܐ ܒܫܒܐ","ܥܪܘܒܬܐ","ܫܒܬܐ"],
-				namesAbbr: ["܏ܐ ܏ܒܫ","܏ܒ ܏ܒܫ","܏ܓ ܏ܒܫ","܏ܕ ܏ܒܫ","܏ܗ ܏ܒܫ","܏ܥܪܘܒ","܏ܫܒ"],
+				namesAbbr: ["\u070fܐ \u070fܒܫ","\u070fܒ \u070fܒܫ","\u070fܓ \u070fܒܫ","\u070fܕ \u070fܒܫ","\u070fܗ \u070fܒܫ","\u070fܥܪܘܒ","\u070fܫܒ"],
 				namesShort: ["ܐ","ܒ","ܓ","ܕ","ܗ","ܥ","ܫ"]
 			},
 			months: {
 				names: ["ܟܢܘܢ ܐܚܪܝ","ܫܒܛ","ܐܕܪ","ܢܝܣܢ","ܐܝܪ","ܚܙܝܪܢ","ܬܡܘܙ","ܐܒ","ܐܝܠܘܠ","ܬܫܪܝ ܩܕܝܡ","ܬܫܪܝ ܐܚܪܝ","ܟܢܘܢ ܩܕܝܡ",""],
-				namesAbbr: ["܏ܟܢ ܏ܒ","ܫܒܛ","ܐܕܪ","ܢܝܣܢ","ܐܝܪ","ܚܙܝܪܢ","ܬܡܘܙ","ܐܒ","ܐܝܠܘܠ","܏ܬܫ ܏ܐ","܏ܬܫ ܏ܒ","܏ܟܢ ܏ܐ",""]
+				namesAbbr: ["\u070fܟܢ \u070fܒ","ܫܒܛ","ܐܕܪ","ܢܝܣܢ","ܐܝܪ","ܚܙܝܪܢ","ܬܡܘܙ","ܐܒ","ܐܝܠܘܠ","\u070fܬܫ \u070fܐ","\u070fܬܫ \u070fܒ","\u070fܟܢ \u070fܐ",""]
 			},
 			AM: ["ܩ.ܛ","ܩ.ܛ","ܩ.ܛ"],
 			PM: ["ܒ.ܛ","ܒ.ܛ","ܒ.ܛ"],
@@ -10683,10 +10933,12 @@ Globalize.addCultureInfo( "syr-SY", "default", {
 Globalize.addCultureInfo( "si-LK", "default", {
 	name: "si-LK",
 	englishName: "Sinhala (Sri Lanka)",
-	nativeName: "සිංහල (ශ්‍රී ලංකා)",
+	nativeName: "සිංහල (ශ්\u200dරී ලංකා)",
 	language: "si",
 	numberFormat: {
 		groupSizes: [3,2],
+		negativeInfinity: "-අනන්තය",
+		positiveInfinity: "අනන්තය",
 		percent: {
 			groupSizes: [3,2]
 		},
@@ -10700,17 +10952,17 @@ Globalize.addCultureInfo( "si-LK", "default", {
 			"/": "-",
 			firstDay: 1,
 			days: {
-				names: ["ඉරිදා","සඳුදා","අඟහරුවාදා","බදාදා","බ්‍රහස්පතින්දා","සිකුරාදා","සෙනසුරාදා"],
+				names: ["ඉරිදා","සඳුදා","අඟහරුවාදා","බදාදා","බ්\u200dරහස්පතින්දා","සිකුරාදා","සෙනසුරාදා"],
 				namesAbbr: ["ඉරිදා","සඳුදා","කුජදා","බුදදා","ගුරුදා","කිවිදා","ශනිදා"],
-				namesShort: ["ඉ","ස","අ","බ","බ්‍ර","සි","සෙ"]
+				namesShort: ["ඉ","ස","අ","බ","බ්\u200dර","සි","සෙ"]
 			},
 			months: {
-				names: ["ජනවාරි","පෙබරවාරි","මාර්තු","අ‌ප්‍රේල්","මැයි","ජූනි","ජූලි","අ‌ගෝස්තු","සැප්තැම්බර්","ඔක්තෝබර්","නොවැම්බර්","දෙසැම්බර්",""],
-				namesAbbr: ["ජන.","පෙබ.","මාර්තු.","අප්‍රේල්.","මැයි.","ජූනි.","ජූලි.","අගෝ.","සැප්.","ඔක්.","නොවැ.","දෙසැ.",""]
+				names: ["ජනවාරි","පෙබරවාරි","මාර්තු","අ\u200cප්\u200dරේල්","මැයි","ජූනි","ජූලි","අ\u200cගෝස්තු","සැප්තැම්බර්","ඔක්තෝබර්","නොවැම්බර්","දෙසැම්බර්",""],
+				namesAbbr: ["ජන.","පෙබ.","මාර්තු.","අප්\u200dරේල්.","මැයි.","ජූනි.","ජූලි.","අගෝ.","සැප්.","ඔක්.","නොවැ.","දෙසැ.",""]
 			},
 			AM: ["පෙ.ව.","පෙ.ව.","පෙ.ව."],
 			PM: ["ප.ව.","ප.ව.","ප.ව."],
-			eras: [{"name":"ක්‍රි.ව.","start":null,"offset":0}],
+			eras: [{"name":"ක්\u200dරි.ව.","start":null,"offset":0}],
 			patterns: {
 				d: "yyyy-MM-dd",
 				D: "yyyy MMMM' මස 'dd' වැනිදා 'dddd",
@@ -10767,6 +11019,7 @@ Globalize.addCultureInfo( "am-ET", "default", {
 	numberFormat: {
 		decimals: 1,
 		groupSizes: [3,0],
+		"NaN": "NAN",
 		percent: {
 			pattern: ["-n%","n%"],
 			decimals: 1,
@@ -10811,6 +11064,9 @@ Globalize.addCultureInfo( "ne-NP", "default", {
 	language: "ne",
 	numberFormat: {
 		groupSizes: [3,2],
+		"NaN": "nan",
+		negativeInfinity: "-infinity",
+		positiveInfinity: "infinity",
 		percent: {
 			pattern: ["-n%","n%"],
 			groupSizes: [3,2]
@@ -10899,6 +11155,9 @@ Globalize.addCultureInfo( "ps-AF", "default", {
 		pattern: ["n-"],
 		",": "،",
 		".": ",",
+		"NaN": "غ ع",
+		negativeInfinity: "-∞",
+		positiveInfinity: "∞",
 		percent: {
 			pattern: ["%n-","%n"],
 			",": "،",
@@ -11011,8 +11270,8 @@ Globalize.addCultureInfo( "ps-AF", "default", {
 		Gregorian_Localized: {
 			firstDay: 6,
 			days: {
-				names: ["یکشنبه","دوشنبه","سه‌شنبه","چارشنبه","پنجشنبه","جمعه","شنبه"],
-				namesAbbr: ["یکشنبه","دوشنبه","سه‌شنبه","چارشنبه","پنجشنبه","جمعه","شنبه"],
+				names: ["یکشنبه","دوشنبه","سه\u200cشنبه","چارشنبه","پنجشنبه","جمعه","شنبه"],
+				namesAbbr: ["یکشنبه","دوشنبه","سه\u200cشنبه","چارشنبه","پنجشنبه","جمعه","شنبه"],
 				namesShort: ["ی","د","س","چ","پ","ج","ش"]
 			},
 			months: {
@@ -11354,6 +11613,8 @@ Globalize.addCultureInfo( "ba-RU", "default", {
 		",": " ",
 		".": ",",
 		groupSizes: [3,0],
+		negativeInfinity: "-бесконечность",
+		positiveInfinity: "бесконечность",
 		percent: {
 			pattern: ["-n%","n%"],
 			groupSizes: [3,0],
@@ -11404,6 +11665,9 @@ Globalize.addCultureInfo( "lb-LU", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "n. num.",
+		negativeInfinity: "-onendlech",
+		positiveInfinity: "+onendlech",
 		percent: {
 			",": " ",
 			".": ","
@@ -11453,6 +11717,8 @@ Globalize.addCultureInfo( "kl-GL", "default", {
 		",": ".",
 		".": ",",
 		groupSizes: [3,0],
+		negativeInfinity: "-INF",
+		positiveInfinity: "INF",
 		percent: {
 			groupSizes: [3,0],
 			",": ".",
@@ -11534,6 +11800,9 @@ Globalize.addCultureInfo( "ii-CN", "default", {
 	language: "ii",
 	numberFormat: {
 		groupSizes: [3,0],
+		"NaN": "ꌗꂷꀋꉬ",
+		negativeInfinity: "ꀄꊭꌐꀋꉆ",
+		positiveInfinity: "ꈤꇁꑖꀋꉬ",
 		percent: {
 			pattern: ["-n%","n%"],
 			groupSizes: [3,0]
@@ -11580,6 +11849,9 @@ Globalize.addCultureInfo( "arn-CL", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		percent: {
 			",": ".",
 			".": ","
@@ -11651,6 +11923,9 @@ Globalize.addCultureInfo( "br-FR", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "NkN",
+		negativeInfinity: "-Anfin",
+		positiveInfinity: "+Anfin",
 		percent: {
 			",": " ",
 			".": ","
@@ -11698,6 +11973,9 @@ Globalize.addCultureInfo( "ug-CN", "default", {
 	language: "ug",
 	isRTL: true,
 	numberFormat: {
+		"NaN": "سان ئەمەس",
+		negativeInfinity: "مەنپىي چەكسىزلىك",
+		positiveInfinity: "مۇسبەت چەكسىزلىك",
 		percent: {
 			pattern: ["-n%","n%"]
 		},
@@ -11782,6 +12060,9 @@ Globalize.addCultureInfo( "oc-FR", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "Non Numeric",
+		negativeInfinity: "-Infinit",
+		positiveInfinity: "+Infinit",
 		percent: {
 			",": " ",
 			".": ","
@@ -11834,6 +12115,9 @@ Globalize.addCultureInfo( "co-FR", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "Mica numericu",
+		negativeInfinity: "-Infinitu",
+		positiveInfinity: "+Infinitu",
 		percent: {
 			",": " ",
 			".": ","
@@ -11882,6 +12166,9 @@ Globalize.addCultureInfo( "gsw-FR", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "Ohne Nummer",
+		negativeInfinity: "-Unendlich",
+		positiveInfinity: "+Unendlich",
 		percent: {
 			",": " ",
 			".": ","
@@ -11930,6 +12217,9 @@ Globalize.addCultureInfo( "sah-RU", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "NAN",
+		negativeInfinity: "-бесконечность",
+		positiveInfinity: "бесконечность",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": " ",
@@ -11980,6 +12270,9 @@ Globalize.addCultureInfo( "qut-GT", "default", {
 	nativeName: "K'iche (Guatemala)",
 	language: "qut",
 	numberFormat: {
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		currency: {
 			symbol: "Q"
 		}
@@ -12057,6 +12350,9 @@ Globalize.addCultureInfo( "wo-SN", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "Non Numérique",
+		negativeInfinity: "-Infini",
+		positiveInfinity: "+Infini",
 		percent: {
 			",": " ",
 			".": ","
@@ -12107,6 +12403,9 @@ Globalize.addCultureInfo( "prs-AF", "default", {
 		pattern: ["n-"],
 		",": ".",
 		".": ",",
+		"NaN": "غ ع",
+		negativeInfinity: "-∞",
+		positiveInfinity: "∞",
 		percent: {
 			pattern: ["%n-","%n"],
 			",": ".",
@@ -12217,8 +12516,8 @@ Globalize.addCultureInfo( "prs-AF", "default", {
 		Gregorian_Localized: {
 			firstDay: 5,
 			days: {
-				names: ["یکشنبه","دوشنبه","سه‌شنبه","چهارشنبه","پنجشنبه","جمعه","شنبه"],
-				namesAbbr: ["یکشنبه","دوشنبه","سه‌شنبه","چهارشنبه","پنجشنبه","جمعه","شنبه"],
+				names: ["یکشنبه","دوشنبه","سه\u200cشنبه","چهارشنبه","پنجشنبه","جمعه","شنبه"],
+				namesAbbr: ["یکشنبه","دوشنبه","سه\u200cشنبه","چهارشنبه","پنجشنبه","جمعه","شنبه"],
 				namesShort: ["ی","د","س","چ","پ","ج","ش"]
 			},
 			months: {
@@ -12246,6 +12545,8 @@ Globalize.addCultureInfo( "gd-GB", "default", {
 	nativeName: "Gàidhlig (An Rìoghachd Aonaichte)",
 	language: "gd",
 	numberFormat: {
+		negativeInfinity: "-Neo-chrìochnachd",
+		positiveInfinity: "Neo-chrìochnachd",
 		currency: {
 			pattern: ["-$n","$n"],
 			symbol: "£"
@@ -12287,9 +12588,12 @@ Globalize.addCultureInfo( "ar-IQ", "default", {
 	isRTL: true,
 	numberFormat: {
 		pattern: ["n-"],
+		"NaN": "ليس برقم",
+		negativeInfinity: "-لا نهاية",
+		positiveInfinity: "+لا نهاية",
 		currency: {
 			pattern: ["$n-","$ n"],
-			symbol: "د.ع.‏"
+			symbol: "د.ع.\u200f"
 		}
 	},
 	calendars: {
@@ -12711,6 +13015,9 @@ Globalize.addCultureInfo( "zh-CN", "default", {
 	nativeName: "中文(中华人民共和国)",
 	language: "zh-CHS",
 	numberFormat: {
+		"NaN": "非数字",
+		negativeInfinity: "负无穷大",
+		positiveInfinity: "正无穷大",
 		percent: {
 			pattern: ["-n%","n%"]
 		},
@@ -12754,6 +13061,9 @@ Globalize.addCultureInfo( "de-CH", "default", {
 	language: "de",
 	numberFormat: {
 		",": "'",
+		"NaN": "n. def.",
+		negativeInfinity: "-unendlich",
+		positiveInfinity: "+unendlich",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": "'"
@@ -12827,6 +13137,9 @@ Globalize.addCultureInfo( "es-MX", "default", {
 	nativeName: "Español (México)",
 	language: "es",
 	numberFormat: {
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		currency: {
 			pattern: ["-$n","$n"]
 		}
@@ -12867,6 +13180,9 @@ Globalize.addCultureInfo( "fr-BE", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "Non Numérique",
+		negativeInfinity: "-Infini",
+		positiveInfinity: "+Infini",
 		percent: {
 			",": ".",
 			".": ","
@@ -12914,6 +13230,9 @@ Globalize.addCultureInfo( "it-CH", "default", {
 	language: "it",
 	numberFormat: {
 		",": "'",
+		"NaN": "Non un numero reale",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "+Infinito",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": "'"
@@ -12962,6 +13281,9 @@ Globalize.addCultureInfo( "nl-BE", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "NaN (Niet-een-getal)",
+		negativeInfinity: "-oneindig",
+		positiveInfinity: "oneindig",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -13010,6 +13332,8 @@ Globalize.addCultureInfo( "nn-NO", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		negativeInfinity: "-INF",
+		positiveInfinity: "INF",
 		percent: {
 			",": " ",
 			".": ","
@@ -13058,6 +13382,9 @@ Globalize.addCultureInfo( "pt-PT", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "NaN (Não é um número)",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "+Infinito",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -13108,6 +13435,8 @@ Globalize.addCultureInfo( "sr-Latn-CS", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-beskonačnost",
+		positiveInfinity: "+beskonačnost",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -13158,6 +13487,8 @@ Globalize.addCultureInfo( "sv-FI", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		negativeInfinity: "-INF",
+		positiveInfinity: "INF",
 		percent: {
 			",": " ",
 			".": ","
@@ -13259,6 +13590,9 @@ Globalize.addCultureInfo( "dsb-DE", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "njedefinowane",
+		negativeInfinity: "-njekońcne",
+		positiveInfinity: "+njekońcne",
 		percent: {
 			",": ".",
 			".": ","
@@ -13547,6 +13881,9 @@ Globalize.addCultureInfo( "mn-Mong-CN", "default", {
 	language: "mn-Mong",
 	numberFormat: {
 		groupSizes: [3,0],
+		"NaN": "ᠲᠤᠭᠠᠠ ᠪᠤᠰᠤ",
+		negativeInfinity: "ᠰᠦᠬᠡᠷᠬᠦ ᠬᠢᠵᠠᠭᠠᠷᠭᠦᠢ ᠶᠡᠬᠡ",
+		positiveInfinity: "ᠡᠶ᠋ᠡᠷᠬᠦ ᠬᠢᠵᠠᠭᠠᠷᠭᠦᠢ ᠶᠠᠬᠡ",
 		percent: {
 			pattern: ["-n%","n%"],
 			groupSizes: [3,0]
@@ -13561,9 +13898,9 @@ Globalize.addCultureInfo( "mn-Mong-CN", "default", {
 		standard: {
 			firstDay: 1,
 			days: {
-				names: ["ᠭᠠᠷᠠᠭ ᠤᠨ ᠡᠳᠦᠷ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠨᠢᠭᠡᠨ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠬᠣᠶᠠᠷ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠭᠤᠷᠪᠠᠨ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠳᠥᠷᠪᠡᠨ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠲᠠᠪᠤᠨ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠵᠢᠷᠭᠤᠭᠠᠨ"],
-				namesAbbr: ["ᠭᠠᠷᠠᠭ ᠤᠨ ᠡᠳᠦᠷ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠨᠢᠭᠡᠨ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠬᠣᠶᠠᠷ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠭᠤᠷᠪᠠᠨ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠳᠥᠷᠪᠡᠨ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠲᠠᠪᠤᠨ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠵᠢᠷᠭᠤᠭᠠᠨ"],
-				namesShort: ["ᠡ‍","ᠨᠢ‍","ᠬᠣ‍","ᠭᠤ‍","ᠳᠥ‍","ᠲᠠ‍","ᠵᠢ‍"]
+				names: ["ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠡᠳᠦᠷ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠨᠢᠭᠡᠨ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠬᠣᠶᠠᠷ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠭᠤᠷᠪᠠᠨ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠳᠥᠷᠪᠡᠨ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠲᠠᠪᠤᠨ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠵᠢᠷᠭᠤᠭᠠᠨ"],
+				namesAbbr: ["ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠡᠳᠦᠷ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠨᠢᠭᠡᠨ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠬᠣᠶᠠᠷ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠭᠤᠷᠪᠠᠨ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠳᠥᠷᠪᠡᠨ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠲᠠᠪᠤᠨ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠵᠢᠷᠭᠤᠭᠠᠨ"],
+				namesShort: ["ᠡ\u200d","ᠨᠢ\u200d","ᠬᠣ\u200d","ᠭᠤ\u200d","ᠳᠥ\u200d","ᠲᠠ\u200d","ᠵᠢ\u200d"]
 			},
 			months: {
 				names: ["ᠨᠢᠭᠡᠳᠦᠭᠡᠷ ᠰᠠᠷ᠎ᠠ","ᠬᠤᠶ᠋ᠠᠳᠤᠭᠠᠷ ᠰᠠᠷ᠎ᠠ","ᠭᠤᠷᠪᠠᠳᠤᠭᠠᠷ ᠰᠠᠷ᠎ᠠ","ᠲᠦᠷᠪᠡᠳᠦᠭᠡᠷ ᠰᠠᠷ᠎ᠠ","ᠲᠠᠪᠤᠳᠤᠭᠠᠷ ᠰᠠᠷ᠎ᠠ","ᠵᠢᠷᠭᠤᠳᠤᠭᠠᠷ ᠰᠠᠷ᠎ᠠ","ᠲᠤᠯᠤᠳᠤᠭᠠᠷ ᠰᠠᠷ᠎ᠠ","ᠨᠠᠢᠮᠠᠳᠤᠭᠠᠷ ᠰᠠᠷ᠎ᠠ","ᠶᠢᠰᠦᠳᠦᠭᠡᠷ ᠰᠠᠷ᠎ᠠ","ᠠᠷᠪᠠᠳᠤᠭᠠᠷ ᠰᠠᠷ᠎ᠠ","ᠠᠷᠪᠠᠨ ᠨᠢᠭᠡᠳᠦᠭᠡᠷ ᠰᠠᠷ᠎ᠠ","ᠠᠷᠪᠠᠨ ᠬᠤᠶ᠋ᠠᠳᠤᠭᠠᠷ ᠰᠠᠷ᠎ᠠ",""],
@@ -13574,11 +13911,11 @@ Globalize.addCultureInfo( "mn-Mong-CN", "default", {
 			eras: [{"name":"ᠣᠨ ᠲᠣᠭᠠᠯᠠᠯ ᠤᠨ","start":null,"offset":0}],
 			patterns: {
 				d: "yyyy/M/d",
-				D: "yyyy'ᠣᠨ ᠤ᠋' M'ᠰᠠᠷ᠎ᠠ  ᠢᠢᠨ 'd' ᠤ᠋ ᠡᠳᠦᠷ'",
+				D: "yyyy'ᠣᠨ ᠤ᠋' M'ᠰᠠᠷ᠎ᠠ \u202fᠢᠢᠨ 'd' ᠤ᠋ ᠡᠳᠦᠷ'",
 				t: "H:mm",
 				T: "H:mm:ss",
-				f: "yyyy'ᠣᠨ ᠤ᠋' M'ᠰᠠᠷ᠎ᠠ  ᠢᠢᠨ 'd' ᠤ᠋ ᠡᠳᠦᠷ' H:mm",
-				F: "yyyy'ᠣᠨ ᠤ᠋' M'ᠰᠠᠷ᠎ᠠ  ᠢᠢᠨ 'd' ᠤ᠋ ᠡᠳᠦᠷ' H:mm:ss",
+				f: "yyyy'ᠣᠨ ᠤ᠋' M'ᠰᠠᠷ᠎ᠠ \u202fᠢᠢᠨ 'd' ᠤ᠋ ᠡᠳᠦᠷ' H:mm",
+				F: "yyyy'ᠣᠨ ᠤ᠋' M'ᠰᠠᠷ᠎ᠠ \u202fᠢᠢᠨ 'd' ᠤ᠋ ᠡᠳᠦᠷ' H:mm:ss",
 				M: "M'ᠰᠠᠷ᠎ᠠ' d'ᠡᠳᠦᠷ'",
 				Y: "yyyy'ᠣᠨ' M'ᠰᠠᠷ᠎ᠠ'"
 			}
@@ -13627,6 +13964,9 @@ Globalize.addCultureInfo( "tzm-Latn-DZ", "default", {
 		pattern: ["n-"],
 		",": ".",
 		".": ",",
+		"NaN": "Non Numérique",
+		negativeInfinity: "-Infini",
+		positiveInfinity: "+Infini",
 		percent: {
 			",": ".",
 			".": ","
@@ -13718,12 +14058,15 @@ Globalize.addCultureInfo( "ar-EG", "default", {
 	numberFormat: {
 		pattern: ["n-"],
 		decimals: 3,
+		"NaN": "ليس برقم",
+		negativeInfinity: "-لا نهاية",
+		positiveInfinity: "+لا نهاية",
 		percent: {
 			decimals: 3
 		},
 		currency: {
 			pattern: ["$n-","$ n"],
-			symbol: "ج.م.‏"
+			symbol: "ج.م.\u200f"
 		}
 	},
 	calendars: {
@@ -14168,6 +14511,9 @@ Globalize.addCultureInfo( "zh-HK", "default", {
 	nativeName: "中文(香港特別行政區)",
 	language: "zh-CHT",
 	numberFormat: {
+		"NaN": "非數字",
+		negativeInfinity: "負無窮大",
+		positiveInfinity: "正無窮大",
 		percent: {
 			pattern: ["-n%","n%"]
 		},
@@ -14211,6 +14557,9 @@ Globalize.addCultureInfo( "de-AT", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "n. def.",
+		negativeInfinity: "-unendlich",
+		positiveInfinity: "+unendlich",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -14285,6 +14634,9 @@ Globalize.addCultureInfo( "es-ES", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		percent: {
 			",": ".",
 			".": ","
@@ -14333,6 +14685,9 @@ Globalize.addCultureInfo( "fr-CA", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "Non Numérique",
+		negativeInfinity: "-Infini",
+		positiveInfinity: "+Infini",
 		percent: {
 			",": " ",
 			".": ","
@@ -14379,6 +14734,8 @@ Globalize.addCultureInfo( "sr-Cyrl-CS", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-бесконачност",
+		positiveInfinity: "+бесконачност",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -14522,13 +14879,16 @@ Globalize.addCultureInfo( "ar-LY", "default", {
 	numberFormat: {
 		pattern: ["n-"],
 		decimals: 3,
+		"NaN": "ليس برقم",
+		negativeInfinity: "-لا نهاية",
+		positiveInfinity: "+لا نهاية",
 		percent: {
 			decimals: 3
 		},
 		currency: {
 			pattern: ["$n-","$n"],
 			decimals: 3,
-			symbol: "د.ل.‏"
+			symbol: "د.ل.\u200f"
 		}
 	},
 	calendars: {
@@ -14987,6 +15347,9 @@ Globalize.addCultureInfo( "de-LU", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "n. def.",
+		negativeInfinity: "-unendlich",
+		positiveInfinity: "+unendlich",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -15056,6 +15419,9 @@ Globalize.addCultureInfo( "es-GT", "default", {
 	nativeName: "Español (Guatemala)",
 	language: "es",
 	numberFormat: {
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		currency: {
 			symbol: "Q"
 		}
@@ -15095,6 +15461,9 @@ Globalize.addCultureInfo( "fr-CH", "default", {
 	language: "fr",
 	numberFormat: {
 		",": "'",
+		"NaN": "Non Numérique",
+		negativeInfinity: "-Infini",
+		positiveInfinity: "+Infini",
 		percent: {
 			",": "'"
 		},
@@ -15247,9 +15616,12 @@ Globalize.addCultureInfo( "ar-DZ", "default", {
 	isRTL: true,
 	numberFormat: {
 		pattern: ["n-"],
+		"NaN": "ليس برقم",
+		negativeInfinity: "-لا نهاية",
+		positiveInfinity: "+لا نهاية",
 		currency: {
 			pattern: ["$n-","$ n"],
-			symbol: "د.ج.‏"
+			symbol: "د.ج.\u200f"
 		}
 	},
 	calendars: {
@@ -15672,6 +16044,9 @@ Globalize.addCultureInfo( "zh-MO", "default", {
 	nativeName: "中文(澳門特別行政區)",
 	language: "zh-CHT",
 	numberFormat: {
+		"NaN": "非數字",
+		negativeInfinity: "負無窮大",
+		positiveInfinity: "正無窮大",
 		percent: {
 			pattern: ["-n%","n%"]
 		},
@@ -15714,6 +16089,9 @@ Globalize.addCultureInfo( "de-LI", "default", {
 	language: "de",
 	numberFormat: {
 		",": "'",
+		"NaN": "n. def.",
+		negativeInfinity: "-unendlich",
+		positiveInfinity: "+unendlich",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": "'"
@@ -15788,6 +16166,9 @@ Globalize.addCultureInfo( "es-CR", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		percent: {
 			",": ".",
 			".": ","
@@ -15834,6 +16215,9 @@ Globalize.addCultureInfo( "fr-LU", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "Non Numérique",
+		negativeInfinity: "-Infini",
+		positiveInfinity: "+Infini",
 		percent: {
 			",": " ",
 			".": ","
@@ -15982,9 +16366,12 @@ Globalize.addCultureInfo( "ar-MA", "default", {
 	isRTL: true,
 	numberFormat: {
 		pattern: ["n-"],
+		"NaN": "ليس برقم",
+		negativeInfinity: "-لا نهاية",
+		positiveInfinity: "+لا نهاية",
 		currency: {
 			pattern: ["$n-","$ n"],
-			symbol: "د.م.‏"
+			symbol: "د.م.\u200f"
 		}
 	},
 	calendars: {
@@ -16436,6 +16823,9 @@ Globalize.addCultureInfo( "es-PA", "default", {
 	nativeName: "Español (Panamá)",
 	language: "es",
 	numberFormat: {
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		currency: {
 			pattern: ["($ n)","$ n"],
 			symbol: "B/."
@@ -16477,6 +16867,9 @@ Globalize.addCultureInfo( "fr-MC", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "Non Numérique",
+		negativeInfinity: "-Infini",
+		positiveInfinity: "+Infini",
 		percent: {
 			",": " ",
 			".": ","
@@ -16525,6 +16918,8 @@ Globalize.addCultureInfo( "sr-Latn-BA", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-beskonačnost",
+		positiveInfinity: "+beskonačnost",
 		percent: {
 			",": ".",
 			".": ","
@@ -16628,13 +17023,16 @@ Globalize.addCultureInfo( "ar-TN", "default", {
 	numberFormat: {
 		pattern: ["n-"],
 		decimals: 3,
+		"NaN": "ليس برقم",
+		negativeInfinity: "-لا نهاية",
+		positiveInfinity: "+لا نهاية",
 		percent: {
 			decimals: 3
 		},
 		currency: {
 			pattern: ["$n-","$ n"],
 			decimals: 3,
-			symbol: "د.ت.‏"
+			symbol: "د.ت.\u200f"
 		}
 	},
 	calendars: {
@@ -17090,6 +17488,9 @@ Globalize.addCultureInfo( "es-DO", "default", {
 	nativeName: "Español (República Dominicana)",
 	language: "es",
 	numberFormat: {
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		currency: {
 			symbol: "RD$"
 		}
@@ -17130,6 +17531,8 @@ Globalize.addCultureInfo( "sr-Cyrl-BA", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-бесконачност",
+		positiveInfinity: "+бесконачност",
 		percent: {
 			",": ".",
 			".": ","
@@ -17230,10 +17633,13 @@ Globalize.addCultureInfo( "ar-OM", "default", {
 	isRTL: true,
 	numberFormat: {
 		pattern: ["n-"],
+		"NaN": "ليس برقم",
+		negativeInfinity: "-لا نهاية",
+		positiveInfinity: "+لا نهاية",
 		currency: {
 			pattern: ["$n-","$ n"],
 			decimals: 3,
-			symbol: "ر.ع.‏"
+			symbol: "ر.ع.\u200f"
 		}
 	},
 	calendars: {
@@ -17680,6 +18086,9 @@ Globalize.addCultureInfo( "es-VE", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		percent: {
 			",": ".",
 			".": ","
@@ -17727,6 +18136,8 @@ Globalize.addCultureInfo( "bs-Cyrl-BA", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-бесконачност",
+		positiveInfinity: "+бесконачност",
 		percent: {
 			",": ".",
 			".": ","
@@ -17827,9 +18238,12 @@ Globalize.addCultureInfo( "ar-YE", "default", {
 	isRTL: true,
 	numberFormat: {
 		pattern: ["n-"],
+		"NaN": "ليس برقم",
+		negativeInfinity: "-لا نهاية",
+		positiveInfinity: "+لا نهاية",
 		currency: {
 			pattern: ["$n-","$ n"],
-			symbol: "ر.ي.‏"
+			symbol: "ر.ي.\u200f"
 		}
 	},
 	calendars: {
@@ -18272,6 +18686,9 @@ Globalize.addCultureInfo( "es-CO", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		percent: {
 			",": ".",
 			".": ","
@@ -18318,6 +18735,8 @@ Globalize.addCultureInfo( "sr-Latn-RS", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-beskonačnost",
+		positiveInfinity: "+beskonačnost",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -18416,9 +18835,12 @@ Globalize.addCultureInfo( "ar-SY", "default", {
 	isRTL: true,
 	numberFormat: {
 		pattern: ["n-"],
+		"NaN": "ليس برقم",
+		negativeInfinity: "-لا نهاية",
+		positiveInfinity: "+لا نهاية",
 		currency: {
 			pattern: ["$n-","$ n"],
-			symbol: "ل.س.‏"
+			symbol: "ل.س.\u200f"
 		}
 	},
 	calendars: {
@@ -18866,6 +19288,9 @@ Globalize.addCultureInfo( "es-PE", "default", {
 	nativeName: "Español (Perú)",
 	language: "es",
 	numberFormat: {
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		currency: {
 			pattern: ["$ -n","$ n"],
 			symbol: "S/."
@@ -18907,6 +19332,8 @@ Globalize.addCultureInfo( "sr-Cyrl-RS", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-бесконачност",
+		positiveInfinity: "+бесконачност",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -18958,13 +19385,16 @@ Globalize.addCultureInfo( "ar-JO", "default", {
 	numberFormat: {
 		pattern: ["n-"],
 		decimals: 3,
+		"NaN": "ليس برقم",
+		negativeInfinity: "-لا نهاية",
+		positiveInfinity: "+لا نهاية",
 		percent: {
 			decimals: 3
 		},
 		currency: {
 			pattern: ["$n-","$ n"],
 			decimals: 3,
-			symbol: "د.ا.‏"
+			symbol: "د.ا.\u200f"
 		}
 	},
 	calendars: {
@@ -19414,6 +19844,9 @@ Globalize.addCultureInfo( "es-AR", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		percent: {
 			",": ".",
 			".": ","
@@ -19460,6 +19893,8 @@ Globalize.addCultureInfo( "sr-Latn-ME", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-beskonačnost",
+		positiveInfinity: "+beskonačnost",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -19510,9 +19945,12 @@ Globalize.addCultureInfo( "ar-LB", "default", {
 	isRTL: true,
 	numberFormat: {
 		pattern: ["n-"],
+		"NaN": "ليس برقم",
+		negativeInfinity: "-لا نهاية",
+		positiveInfinity: "+لا نهاية",
 		currency: {
 			pattern: ["$n-","$ n"],
-			symbol: "ل.ل.‏"
+			symbol: "ل.ل.\u200f"
 		}
 	},
 	calendars: {
@@ -19947,6 +20385,9 @@ Globalize.addCultureInfo( "es-EC", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		percent: {
 			",": ".",
 			".": ","
@@ -19993,6 +20434,8 @@ Globalize.addCultureInfo( "sr-Cyrl-ME", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-бесконачност",
+		positiveInfinity: "+бесконачност",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -20044,13 +20487,16 @@ Globalize.addCultureInfo( "ar-KW", "default", {
 	numberFormat: {
 		pattern: ["n-"],
 		decimals: 3,
+		"NaN": "ليس برقم",
+		negativeInfinity: "-لا نهاية",
+		positiveInfinity: "+لا نهاية",
 		percent: {
 			decimals: 3
 		},
 		currency: {
 			pattern: ["$n-","$ n"],
 			decimals: 3,
-			symbol: "د.ك.‏"
+			symbol: "د.ك.\u200f"
 		}
 	},
 	calendars: {
@@ -20485,6 +20931,9 @@ Globalize.addCultureInfo( "es-CL", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		percent: {
 			",": ".",
 			".": ","
@@ -20532,9 +20981,12 @@ Globalize.addCultureInfo( "ar-AE", "default", {
 	isRTL: true,
 	numberFormat: {
 		pattern: ["n-"],
+		"NaN": "ليس برقم",
+		negativeInfinity: "-لا نهاية",
+		positiveInfinity: "+لا نهاية",
 		currency: {
 			pattern: ["$n-","$ n"],
-			symbol: "د.إ.‏"
+			symbol: "د.إ.\u200f"
 		}
 	},
 	calendars: {
@@ -20958,6 +21410,9 @@ Globalize.addCultureInfo( "es-UY", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		percent: {
 			",": ".",
 			".": ","
@@ -21007,13 +21462,16 @@ Globalize.addCultureInfo( "ar-BH", "default", {
 	numberFormat: {
 		pattern: ["n-"],
 		decimals: 3,
+		"NaN": "ليس برقم",
+		negativeInfinity: "-لا نهاية",
+		positiveInfinity: "+لا نهاية",
 		percent: {
 			decimals: 3
 		},
 		currency: {
 			pattern: ["$n-","$ n"],
 			decimals: 3,
-			symbol: "د.ب.‏"
+			symbol: "د.ب.\u200f"
 		}
 	},
 	calendars: {
@@ -21437,6 +21895,9 @@ Globalize.addCultureInfo( "es-PY", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		percent: {
 			",": ".",
 			".": ","
@@ -21485,9 +21946,12 @@ Globalize.addCultureInfo( "ar-QA", "default", {
 	isRTL: true,
 	numberFormat: {
 		pattern: ["n-"],
+		"NaN": "ليس برقم",
+		negativeInfinity: "-لا نهاية",
+		positiveInfinity: "+لا نهاية",
 		currency: {
 			pattern: ["$n-","$ n"],
-			symbol: "ر.ق.‏"
+			symbol: "ر.ق.\u200f"
 		}
 	},
 	calendars: {
@@ -21943,6 +22407,9 @@ Globalize.addCultureInfo( "es-BO", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		percent: {
 			",": ".",
 			".": ","
@@ -22016,6 +22483,9 @@ Globalize.addCultureInfo( "es-SV", "default", {
 	nativeName: "Español (El Salvador)",
 	language: "es",
 	numberFormat: {
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		currency: {
 			groupSizes: [3,0]
 		}
@@ -22079,6 +22549,9 @@ Globalize.addCultureInfo( "es-HN", "default", {
 	nativeName: "Español (Honduras)",
 	language: "es",
 	numberFormat: {
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		currency: {
 			pattern: ["$ -n","$ n"],
 			groupSizes: [3,0],
@@ -22119,6 +22592,9 @@ Globalize.addCultureInfo( "es-NI", "default", {
 	nativeName: "Español (Nicaragua)",
 	language: "es",
 	numberFormat: {
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		currency: {
 			pattern: ["($ n)","$ n"],
 			groupSizes: [3,0],
@@ -22159,6 +22635,9 @@ Globalize.addCultureInfo( "es-PR", "default", {
 	nativeName: "Español (Puerto Rico)",
 	language: "es",
 	numberFormat: {
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		currency: {
 			pattern: ["($ n)","$ n"],
 			groupSizes: [3,0]
@@ -22199,6 +22678,9 @@ Globalize.addCultureInfo( "es-US", "default", {
 	language: "es",
 	numberFormat: {
 		groupSizes: [3,0],
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		percent: {
 			groupSizes: [3,0]
 		}
@@ -22231,6 +22713,8 @@ Globalize.addCultureInfo( "bs-Cyrl", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-бесконачност",
+		positiveInfinity: "+бесконачност",
 		percent: {
 			",": ".",
 			".": ","
@@ -22327,6 +22811,8 @@ Globalize.addCultureInfo( "sr-Cyrl", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-бесконачност",
+		positiveInfinity: "+бесконачност",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -22377,6 +22863,8 @@ Globalize.addCultureInfo( "sr-Latn", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-beskonačnost",
+		positiveInfinity: "+beskonačnost",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -22578,6 +23066,9 @@ Globalize.addCultureInfo( "zh", "default", {
 	nativeName: "中文",
 	language: "zh",
 	numberFormat: {
+		"NaN": "非数字",
+		negativeInfinity: "负无穷大",
+		positiveInfinity: "正无穷大",
 		percent: {
 			pattern: ["-n%","n%"]
 		},
@@ -22622,6 +23113,8 @@ Globalize.addCultureInfo( "nn", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		negativeInfinity: "-INF",
+		positiveInfinity: "INF",
 		percent: {
 			",": " ",
 			".": ","
@@ -22713,7 +23206,7 @@ Globalize.addCultureInfo( "bs", "default", {
 Globalize.addCultureInfo( "az-Latn", "default", {
 	name: "az-Latn",
 	englishName: "Azeri (Latin)",
-	nativeName: "Azərbaycan­ılı",
+	nativeName: "Azərbaycan\xadılı",
 	language: "az-Latn",
 	numberFormat: {
 		",": " ",
@@ -22963,6 +23456,9 @@ Globalize.addCultureInfo( "zh-Hant", "default", {
 	nativeName: "中文(繁體)",
 	language: "zh-Hant",
 	numberFormat: {
+		"NaN": "非數字",
+		negativeInfinity: "負無窮大",
+		positiveInfinity: "正無窮大",
 		percent: {
 			pattern: ["-n%","n%"]
 		},
@@ -23006,6 +23502,8 @@ Globalize.addCultureInfo( "nb", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		negativeInfinity: "-INF",
+		positiveInfinity: "INF",
 		percent: {
 			",": " ",
 			".": ","
@@ -23054,6 +23552,8 @@ Globalize.addCultureInfo( "sr", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		negativeInfinity: "-beskonačnost",
+		positiveInfinity: "+beskonačnost",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": ".",
@@ -23105,6 +23605,8 @@ Globalize.addCultureInfo( "tg-Cyrl", "default", {
 		",": " ",
 		".": ",",
 		groupSizes: [3,0],
+		negativeInfinity: "-бесконечность",
+		positiveInfinity: "бесконечность",
 		percent: {
 			pattern: ["-n%","n%"],
 			groupSizes: [3,0],
@@ -23158,6 +23660,9 @@ Globalize.addCultureInfo( "dsb", "default", {
 	numberFormat: {
 		",": ".",
 		".": ",",
+		"NaN": "njedefinowane",
+		negativeInfinity: "-njekońcne",
+		positiveInfinity: "+njekońcne",
 		percent: {
 			",": ".",
 			".": ","
@@ -23311,6 +23816,9 @@ Globalize.addCultureInfo( "mn-Mong", "default", {
 	language: "mn-Mong",
 	numberFormat: {
 		groupSizes: [3,0],
+		"NaN": "ᠲᠤᠭᠠᠠ ᠪᠤᠰᠤ",
+		negativeInfinity: "ᠰᠦᠬᠡᠷᠬᠦ ᠬᠢᠵᠠᠭᠠᠷᠭᠦᠢ ᠶᠡᠬᠡ",
+		positiveInfinity: "ᠡᠶ᠋ᠡᠷᠬᠦ ᠬᠢᠵᠠᠭᠠᠷᠭᠦᠢ ᠶᠠᠬᠡ",
 		percent: {
 			pattern: ["-n%","n%"],
 			groupSizes: [3,0]
@@ -23325,9 +23833,9 @@ Globalize.addCultureInfo( "mn-Mong", "default", {
 		standard: {
 			firstDay: 1,
 			days: {
-				names: ["ᠭᠠᠷᠠᠭ ᠤᠨ ᠡᠳᠦᠷ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠨᠢᠭᠡᠨ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠬᠣᠶᠠᠷ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠭᠤᠷᠪᠠᠨ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠳᠥᠷᠪᠡᠨ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠲᠠᠪᠤᠨ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠵᠢᠷᠭᠤᠭᠠᠨ"],
-				namesAbbr: ["ᠭᠠᠷᠠᠭ ᠤᠨ ᠡᠳᠦᠷ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠨᠢᠭᠡᠨ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠬᠣᠶᠠᠷ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠭᠤᠷᠪᠠᠨ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠳᠥᠷᠪᠡᠨ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠲᠠᠪᠤᠨ","ᠭᠠᠷᠠᠭ ᠤᠨ ᠵᠢᠷᠭᠤᠭᠠᠨ"],
-				namesShort: ["ᠡ‍","ᠨᠢ‍","ᠬᠣ‍","ᠭᠤ‍","ᠳᠥ‍","ᠲᠠ‍","ᠵᠢ‍"]
+				names: ["ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠡᠳᠦᠷ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠨᠢᠭᠡᠨ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠬᠣᠶᠠᠷ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠭᠤᠷᠪᠠᠨ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠳᠥᠷᠪᠡᠨ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠲᠠᠪᠤᠨ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠵᠢᠷᠭᠤᠭᠠᠨ"],
+				namesAbbr: ["ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠡᠳᠦᠷ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠨᠢᠭᠡᠨ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠬᠣᠶᠠᠷ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠭᠤᠷᠪᠠᠨ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠳᠥᠷᠪᠡᠨ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠲᠠᠪᠤᠨ","ᠭᠠᠷᠠᠭ\u202fᠤᠨ ᠵᠢᠷᠭᠤᠭᠠᠨ"],
+				namesShort: ["ᠡ\u200d","ᠨᠢ\u200d","ᠬᠣ\u200d","ᠭᠤ\u200d","ᠳᠥ\u200d","ᠲᠠ\u200d","ᠵᠢ\u200d"]
 			},
 			months: {
 				names: ["ᠨᠢᠭᠡᠳᠦᠭᠡᠷ ᠰᠠᠷ᠎ᠠ","ᠬᠤᠶ᠋ᠠᠳᠤᠭᠠᠷ ᠰᠠᠷ᠎ᠠ","ᠭᠤᠷᠪᠠᠳᠤᠭᠠᠷ ᠰᠠᠷ᠎ᠠ","ᠲᠦᠷᠪᠡᠳᠦᠭᠡᠷ ᠰᠠᠷ᠎ᠠ","ᠲᠠᠪᠤᠳᠤᠭᠠᠷ ᠰᠠᠷ᠎ᠠ","ᠵᠢᠷᠭᠤᠳᠤᠭᠠᠷ ᠰᠠᠷ᠎ᠠ","ᠲᠤᠯᠤᠳᠤᠭᠠᠷ ᠰᠠᠷ᠎ᠠ","ᠨᠠᠢᠮᠠᠳᠤᠭᠠᠷ ᠰᠠᠷ᠎ᠠ","ᠶᠢᠰᠦᠳᠦᠭᠡᠷ ᠰᠠᠷ᠎ᠠ","ᠠᠷᠪᠠᠳᠤᠭᠠᠷ ᠰᠠᠷ᠎ᠠ","ᠠᠷᠪᠠᠨ ᠨᠢᠭᠡᠳᠦᠭᠡᠷ ᠰᠠᠷ᠎ᠠ","ᠠᠷᠪᠠᠨ ᠬᠤᠶ᠋ᠠᠳᠤᠭᠠᠷ ᠰᠠᠷ᠎ᠠ",""],
@@ -23338,11 +23846,11 @@ Globalize.addCultureInfo( "mn-Mong", "default", {
 			eras: [{"name":"ᠣᠨ ᠲᠣᠭᠠᠯᠠᠯ ᠤᠨ","start":null,"offset":0}],
 			patterns: {
 				d: "yyyy/M/d",
-				D: "yyyy'ᠣᠨ ᠤ᠋' M'ᠰᠠᠷ᠎ᠠ  ᠢᠢᠨ 'd' ᠤ᠋ ᠡᠳᠦᠷ'",
+				D: "yyyy'ᠣᠨ ᠤ᠋' M'ᠰᠠᠷ᠎ᠠ \u202fᠢᠢᠨ 'd' ᠤ᠋ ᠡᠳᠦᠷ'",
 				t: "H:mm",
 				T: "H:mm:ss",
-				f: "yyyy'ᠣᠨ ᠤ᠋' M'ᠰᠠᠷ᠎ᠠ  ᠢᠢᠨ 'd' ᠤ᠋ ᠡᠳᠦᠷ' H:mm",
-				F: "yyyy'ᠣᠨ ᠤ᠋' M'ᠰᠠᠷ᠎ᠠ  ᠢᠢᠨ 'd' ᠤ᠋ ᠡᠳᠦᠷ' H:mm:ss",
+				f: "yyyy'ᠣᠨ ᠤ᠋' M'ᠰᠠᠷ᠎ᠠ \u202fᠢᠢᠨ 'd' ᠤ᠋ ᠡᠳᠦᠷ' H:mm",
+				F: "yyyy'ᠣᠨ ᠤ᠋' M'ᠰᠠᠷ᠎ᠠ \u202fᠢᠢᠨ 'd' ᠤ᠋ ᠡᠳᠦᠷ' H:mm:ss",
 				M: "M'ᠰᠠᠷ᠎ᠠ' d'ᠡᠳᠦᠷ'",
 				Y: "yyyy'ᠣᠨ' M'ᠰᠠᠷ᠎ᠠ'"
 			}
@@ -23391,6 +23899,9 @@ Globalize.addCultureInfo( "tzm-Latn", "default", {
 		pattern: ["n-"],
 		",": ".",
 		".": ",",
+		"NaN": "Non Numérique",
+		negativeInfinity: "-Infini",
+		positiveInfinity: "+Infini",
 		percent: {
 			",": ".",
 			".": ","
@@ -23466,6 +23977,9 @@ Globalize.addCultureInfo( "zh-CHS", "default", {
 	nativeName: "中文(简体) 旧版",
 	language: "zh-CHS",
 	numberFormat: {
+		"NaN": "非数字",
+		negativeInfinity: "负无穷大",
+		positiveInfinity: "正无穷大",
 		percent: {
 			pattern: ["-n%","n%"]
 		},
@@ -23508,6 +24022,9 @@ Globalize.addCultureInfo( "zh-CHT", "default", {
 	nativeName: "中文(繁體) 舊版",
 	language: "zh-CHT",
 	numberFormat: {
+		"NaN": "非數字",
+		negativeInfinity: "負無窮大",
+		positiveInfinity: "正無窮大",
 		percent: {
 			pattern: ["-n%","n%"]
 		},

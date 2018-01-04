@@ -15,9 +15,9 @@
 
 var Globalize;
 
-if ( typeof require !== "undefined"
-	&& typeof exports !== "undefined"
-	&& typeof module !== "undefined" ) {
+if ( typeof require !== "undefined" &&
+	typeof exports !== "undefined" &&
+	typeof module !== "undefined" ) {
 	// Assume CommonJS
 	Globalize = require( "globalize" );
 } else {
@@ -31,6 +31,9 @@ Globalize.addCultureInfo( "qut-GT", "default", {
 	nativeName: "K'iche (Guatemala)",
 	language: "qut",
 	numberFormat: {
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		currency: {
 			symbol: "Q"
 		}

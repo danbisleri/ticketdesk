@@ -15,9 +15,9 @@
 
 var Globalize;
 
-if ( typeof require !== "undefined"
-	&& typeof exports !== "undefined"
-	&& typeof module !== "undefined" ) {
+if ( typeof require !== "undefined" &&
+	typeof exports !== "undefined" &&
+	typeof module !== "undefined" ) {
 	// Assume CommonJS
 	Globalize = require( "globalize" );
 } else {
@@ -34,6 +34,8 @@ Globalize.addCultureInfo( "kl-GL", "default", {
 		",": ".",
 		".": ",",
 		groupSizes: [3,0],
+		negativeInfinity: "-INF",
+		positiveInfinity: "INF",
 		percent: {
 			groupSizes: [3,0],
 			",": ".",

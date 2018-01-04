@@ -19,6 +19,7 @@ using Microsoft.AspNet.Identity;
 using TicketDesk.Domain.Model;
 using TicketDesk.Web.Identity;
 using TicketDesk.Localization.Models;
+using System.ComponentModel;
 
 namespace TicketDesk.Web.Client.Models
 {
@@ -35,10 +36,15 @@ namespace TicketDesk.Web.Client.Models
             UserManager = DependencyResolver.Current.GetService<TicketDeskUserManager>();
         }
 
+        public DateTimeOffset? GetEndedTicketDateEnd()
+        {
+            return CurrentListSetting.EndedTicketDateEnd;
+        }
 
-        public DateTimeOffset? EndedTicketDateEnd => CurrentListSetting.EndedTicketDateEnd;
-
-        public DateTimeOffset? EndedTicketDateStart => CurrentListSetting.EndedTicketDateStart;
+        public DateTimeOffset? GetEndedTicketDateStart()
+        {
+            return CurrentListSetting.EndedTicketDateStart;
+        }
 
         //TODO: Refactor all selectlists here to use the select list extensions B
 
@@ -125,8 +131,9 @@ namespace TicketDesk.Web.Client.Models
                 {
                     selectedUserName = fColumn.ColumnValue.ToString();
                 }
-               
+
                 var lusers = GetUsersInRole("TdInternalUsers");
+                lusers.AddRange(GetUsersInRole("TdHelpDeskUsers"));
                 lusers.Insert(0, new UserItem { Name = "anyone", DisplayName = Strings.AssignedTo_Anyone });
 
                 return new SelectList(lusers, "Name", "DisplayName", selectedUserName);

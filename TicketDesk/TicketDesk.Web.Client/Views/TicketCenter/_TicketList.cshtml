@@ -23,9 +23,16 @@
     var ajaxPagerOptions = new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "ticketList", OnBegin = "ticketCenter.paging.beginChangePage", OnSuccess = "ticketCenter.completeChangeList", OnFailure = "ticketCenter.completeChangeList" };
 }
 <div id="ticketList" class="panel panel-default">
-    <div class="panel-heading row-no-padding">
-        @Html.Partial("_FilterBar")
-    </div>
+
+    @* @if (Request.Url.ToString().ToLower().Contains("reporttickets")
+                || Request.Url.ToString().ToLower().Contains("historytickets"))
+    {
+        <div class="panel-heading row-no-padding">
+            @Html.Partial("_FilterBar")
+        </div>
+    }
+    *@
+
     <div class="panel-body" style="padding: 0;">
         <div class="table-responsive">
             <table class="table table-hover table-condensed">

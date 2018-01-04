@@ -63,16 +63,29 @@ namespace TicketDesk.Domain.Model
                 {
                     var filterColumn = filterColumns[i];
 
-                    var optr = (filterColumn.UseEqualityComparison.HasValue && !filterColumn.UseEqualityComparison.Value)
-                        ? "!="
-                        : "=";
+                    var optr = string.Empty;
 
-                    fkeys[i] = string.Format("it.{0} {1} {2}", filterColumn.ColumnName, optr, "@" + filterColumn.ColumnName);
+                    if (filterColumn.ColumnValueType == typeof(DateTimeOffset))
+                    {
+                       optr = filterColumn.UseOperatorComparison;
+                    }
+                    else
+                    { 
+                        optr = (filterColumn.UseEqualityComparison.HasValue && !filterColumn.UseEqualityComparison.Value)
+                            ? "!="
+                            : "=";
+                    }
+
+                    
+                    //fkeys[i] = string.Format((filterColumn.ColumnValueType == typeof(DateTimeOffset)) ? "it.{0}.UtcDateTime {1} {2}" : "it.{0} {1} {2}", (filterColumn.ColumnValueType == typeof(DateTimeOffset)) ? "LastUpdateDate" : filterColumn.ColumnName, optr, "@" + filterColumn.ColumnName);
+
+                    fkeys[i] = string.Format("it.{0} {1} {2}", (filterColumn.ColumnValueType == typeof(DateTimeOffset)) ? "LastUpdateDate" : filterColumn.ColumnName, optr, "@" + filterColumn.ColumnName);
+
 
                     //most of the time esql works with whatever type of param value you pass in, but
                     // enums in our collection are serialized to/from json as integers.
                     // Check if enum, and explicitly convert int value to the correct enum value
-                    if (filterColumn.ColumnValueType != null && filterColumn.ColumnValueType.IsEnum)
+                    if (filterColumn.ColumnValueType != null && filterColumn.ColumnValueType.IsEnum && filterColumn.ColumnName.ToString() != "LastUpdateDate")
                     {
                         filterColumn.ColumnValue = Enum.Parse(filterColumn.ColumnValueType, filterColumn.ColumnValue.ToString());
                     }

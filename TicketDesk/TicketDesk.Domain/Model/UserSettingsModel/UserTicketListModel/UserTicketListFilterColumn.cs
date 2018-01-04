@@ -57,6 +57,8 @@ namespace TicketDesk.Domain.Model
         /// <value>Set true use an equality comparison, otherwise set fase to use an inequality comparison.</value>
         public bool? UseEqualityComparison { get; set; }
 
+        public string UseOperatorComparison { set; get; }
+
         /// <summary>
         /// Gets or sets the name of the column to test.
         /// </summary>

@@ -15,9 +15,9 @@
 
 var Globalize;
 
-if ( typeof require !== "undefined"
-	&& typeof exports !== "undefined"
-	&& typeof module !== "undefined" ) {
+if ( typeof require !== "undefined" &&
+	typeof exports !== "undefined" &&
+	typeof module !== "undefined" ) {
 	// Assume CommonJS
 	Globalize = require( "globalize" );
 } else {
@@ -34,12 +34,15 @@ Globalize.addCultureInfo( "ar-EG", "default", {
 	numberFormat: {
 		pattern: ["n-"],
 		decimals: 3,
+		"NaN": "ليس برقم",
+		negativeInfinity: "-لا نهاية",
+		positiveInfinity: "+لا نهاية",
 		percent: {
 			decimals: 3
 		},
 		currency: {
 			pattern: ["$n-","$ n"],
-			symbol: "ج.م.‏"
+			symbol: "ج.م.\u200f"
 		}
 	},
 	calendars: {

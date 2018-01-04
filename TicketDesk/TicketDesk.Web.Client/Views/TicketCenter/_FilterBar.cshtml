@@ -19,8 +19,11 @@
 @{
 
     var tickets = Model.Tickets;
+    //var ajaxFilterOptions = new AjaxOptions { UpdateTargetId = "ticketList", OnBegin = "ticketCenter.filters.beginChangeFilter", OnSuccess = "ticketCenter.completeChangeList", OnFailure = "ticketCenter.completeChangeList" };
     var ajaxFilterOptions = new AjaxOptions { UpdateTargetId = "ticketList", OnBegin = "ticketCenter.filters.beginChangeFilter", OnSuccess = "ticketCenter.completeChangeList", OnFailure = "ticketCenter.completeChangeList" };
+
 }
+
 
 
 
@@ -38,7 +41,7 @@
                 <div class="row">
                     <div class="form-group form-group-xs small" style="width: 100%; ">
 
-                        <label class="control-label col-sm-1 text-right">
+                        <label class="control-label col-sm-2 text-right">
                             @Index.Status
                         </label>
                         <div class="col-sm-2">
@@ -52,35 +55,65 @@
                             @Html.DropDownList("Owner", Model.FilterBar.SubmittersSelectList, Model.FilterBar.OwnerFilterHtmlAttributes)
                         </div>
 
-                        <label class="control-label col-sm-1 text-right form-control-static">
+                        @*<label class="control-label col-sm-1 text-right form-control-static">
                             @Index.Assigned
                         </label>
                         <div class="col-sm-1">
                             @Html.DropDownList("AssignedTo", Model.FilterBar.AssignedToSelectList, Model.FilterBar.AssignedFilterHtmlAttributes)
-                            <input type="submit" value="filter" id="filterSubmitButton" />
-                        </div>
+
+                        </div>*@
 
                         <label class="control-label col-sm-1 text-right form-control-static">
+                            @Index.DateTicket @Index.Start
+                        </label>
+                        <div class="col-sm-2">
+                            @Html.TextBox("dateStart", Model.FilterBar.GetEndedTicketDateStart(), new { @class = "form-control datepicker", @id = "dateStart" })
+                        </div>
+
+                        @*<label class="control-label col-sm-1 text-right form-control-static">
+                            @Index.Show
+                        </label>
+                        <div class="col-sm-1" style="white-space: nowrap">
+                            @Html.DropDownList("PageSize", Model.FilterBar.ItemsPerPageSelectList, new { @class = "postback form-control number-select" })<label class="control-label form-control-static"> @string.Format(Index.TotalItemCount, Model.Tickets.TotalItemCount)</label>
+                        </div>*@
+                        <div class="col-sm-3">
+                            <input type="submit" value="Buscar" id="filterSubmitButton" class="btn btn-primary btn-sm" />
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-xs small" style="width: 100%; ">
+
+                        <label class="control-label col-sm-2 text-right form-control-static">
                             @Index.Show
                         </label>
                         <div class="col-sm-1" style="white-space: nowrap">
                             @Html.DropDownList("PageSize", Model.FilterBar.ItemsPerPageSelectList, new { @class = "postback form-control number-select" })<label class="control-label form-control-static"> @string.Format(Index.TotalItemCount, Model.Tickets.TotalItemCount)</label>
                         </div>
 
-                         <label class="control-label col-sm-1 text-right form-control-static">
-                                @Index.DateTicket @Index.Start
-                            </label>
-                            <div class="col-sm-1">
-                                @Html.TextBoxFor(model => model.FilterBar.EndedTicketDateStart, new { @class = "form-control datepicker" })
-                            </div>
-                            <label class="control-label col-sm-10 text-right form-control-static">
-                                @Index.End
-                            </label>
-                            <div class="col-sm-1">
-                                @Html.TextBoxFor(model => model.FilterBar.EndedTicketDateEnd, new { @class = "form-control datepicker" })
-                            </div>
+                        <label class="control-label col-sm-2 text-right form-control-static">
+                            @Index.Assigned
+                        </label>
+                        <div class="col-sm-1">
+                            @Html.DropDownList("AssignedTo", Model.FilterBar.AssignedToSelectList, Model.FilterBar.AssignedFilterHtmlAttributes)
+
+                        </div>
+                        @*<label class="control-label col-sm-1 text-right form-control-static">
+                            @Index.DateTicket @Index.Start
+                        </label>
+                        <div class="col-sm-1">
+                            @Html.TextBox("dateStart", Model.FilterBar.GetEndedTicketDateStart(), new { @class = "form-control datepicker", @id = "dateStart" })
+                        </div>*@
+
+                        <label class="control-label col-sm-1 text-right form-control-static">
+                            @Index.DateTicket @Index.End
+                        </label>
+                        <div class="col-sm-1">
+                            @Html.TextBox("dateEnd", Model.FilterBar.GetEndedTicketDateEnd(), new { @class = "form-control datepicker", @id = "dateEnd" })
+                        </div>
+
                         
                     </div>
+
                 </div>
             }
         </div>

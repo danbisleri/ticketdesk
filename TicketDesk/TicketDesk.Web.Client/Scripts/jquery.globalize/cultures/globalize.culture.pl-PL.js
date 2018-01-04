@@ -15,9 +15,9 @@
 
 var Globalize;
 
-if ( typeof require !== "undefined"
-	&& typeof exports !== "undefined"
-	&& typeof module !== "undefined" ) {
+if ( typeof require !== "undefined" &&
+	typeof exports !== "undefined" &&
+	typeof module !== "undefined" ) {
 	// Assume CommonJS
 	Globalize = require( "globalize" );
 } else {
@@ -33,6 +33,9 @@ Globalize.addCultureInfo( "pl-PL", "default", {
 	numberFormat: {
 		",": " ",
 		".": ",",
+		"NaN": "nie jest liczbą",
+		negativeInfinity: "-nieskończoność",
+		positiveInfinity: "+nieskończoność",
 		percent: {
 			pattern: ["-n%","n%"],
 			",": " ",
@@ -51,7 +54,7 @@ Globalize.addCultureInfo( "pl-PL", "default", {
 			firstDay: 1,
 			days: {
 				names: ["niedziela","poniedziałek","wtorek","środa","czwartek","piątek","sobota"],
-				namesAbbr: ["N","Pn","Wt","Śr","Cz","Pt","So"],
+				namesAbbr: ["niedz.","pon.","wt.","śr.","czw.","pt.","sob."],
 				namesShort: ["N","Pn","Wt","Śr","Cz","Pt","So"]
 			},
 			months: {

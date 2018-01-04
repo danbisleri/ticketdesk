@@ -45,7 +45,7 @@ namespace TicketDesk.Domain.Model
         /// <param name="listDisplayName">Display name of the list.</param>
         /// <param name="listMenuDisplayOrder">The list menu display order.</param>
         /// <param name="includeClosedTickets">if set to <c>true</c> [include closed tickets].</param>
-        public UserTicketListSetting(string listName, string listDisplayName, int listMenuDisplayOrder, bool includeClosedTickets)
+        public UserTicketListSetting(string listName, string listDisplayName, int listMenuDisplayOrder, bool includeClosedTickets )
         {
             ListName = listName;
             ListDisplayName = listDisplayName;
@@ -78,6 +78,19 @@ namespace TicketDesk.Domain.Model
             ItemsPerPage = itemsPerPage;
             SortColumns = sortColumns;
             FilterColumns = filterColumns;
+            DisabledFilterColumnNames = (disabledFilterColumnNames) ?? new List<string>();
+        }
+
+        public UserTicketListSetting(string listName, string listDisplayName, int listMenuDisplayOrder, int itemsPerPage, List<UserTicketListSortColumn> sortColumns, List<UserTicketListFilterColumn> filterColumns, List<string> disabledFilterColumnNames, DateTimeOffset dateStart , DateTimeOffset dateEnd)
+        {
+            ListName = listName;
+            ListDisplayName = listDisplayName;
+            ListMenuDisplayOrder = listMenuDisplayOrder;
+            ItemsPerPage = itemsPerPage;
+            SortColumns = sortColumns;
+            FilterColumns = filterColumns;
+            EndedTicketDateStart = dateStart;
+            EndedTicketDateEnd = dateEnd;
             DisabledFilterColumnNames = (disabledFilterColumnNames) ?? new List<string>();
         }
 
@@ -152,7 +165,7 @@ namespace TicketDesk.Domain.Model
         /// <param name="ticketStatus">The current status filter setting.</param>
         /// <param name="owner">The owner filter setting.</param>
         /// <param name="assignedTo">The assigned to filter setting.</param>
-        public void ModifyFilterSettings(int pageSize, string ticketStatus, string owner, string assignedTo)
+        public void ModifyFilterSettings(int pageSize, string ticketStatus, string owner, string assignedTo, string dateStart, string dateEnd)
         {
             ItemsPerPage = pageSize;
 
@@ -168,9 +181,35 @@ namespace TicketDesk.Domain.Model
             {
                 FilterColumns.ChangeAssignedFilter(assignedTo);
             }
+            //if (!string.IsNullOrEmpty(dateStart.ToString()))
+            //s{
+                FilterColumns.ChangeDateStartFilter(dateStart);
+            //}
+            //if (!string.IsNullOrEmpty(dateEnd.ToString()))
+            //{
+                FilterColumns.ChangeDateEndFilter(dateEnd);
+            //}
+            
         }
 
-        
+
+        //public void ModifyFilterSettings(int pageSize, string ticketStatus, string owner, string assignedTo)
+        //{
+        //    ItemsPerPage = pageSize;
+
+        //    if (!DisabledFilterColumnNames.Contains("TicketStatus"))
+        //    {
+        //        FilterColumns.ChangeTicketStatusFilter(ticketStatus);
+        //    }
+        //    if (!DisabledFilterColumnNames.Contains("Owner"))
+        //    {
+        //        FilterColumns.ChangeOwnerFilter(owner);
+        //    }
+        //    if (!DisabledFilterColumnNames.Contains("AssignedTo"))
+        //    {
+        //        FilterColumns.ChangeAssignedFilter(assignedTo);
+        //    }
+        //}
 
         internal static List<UserTicketListSetting> GetDefaultListSettings(string userId, bool isHelpDeskUserOrAdmin)
         {
@@ -229,6 +268,19 @@ namespace TicketDesk.Domain.Model
 
             settings.Add(new UserTicketListSetting("historytickets", DefaultListName["historytickets"], disOrder, 20, historyticketsSortColumns, historyticketsFilterColumns, disableStatusColumn));
 
+            if (isHelpDeskUserOrAdmin)
+            {
+                var reportticketsSortColumns = new List<UserTicketListSortColumn>();
+                var reportticketsFilterColumns = new List<UserTicketListFilterColumn>();
+                reportticketsSortColumns.Add(new UserTicketListSortColumn("TicketStatus", ColumnSortDirection.Ascending));
+                reportticketsSortColumns.Add(new UserTicketListSortColumn("LastUpdateDate", ColumnSortDirection.Descending));
+                reportticketsFilterColumns.Add(new UserTicketListFilterColumn("TicketStatus", true, TicketStatus.Closed));
+                //reportticketsFilterColumns.Add(new UserTicketListFilterColumn("Owner", false, userId));
+                //reportticketsFilterColumns.Add(new UserTicketListFilterColumn("AssignedTo", false, userId));
+
+                settings.Add(new UserTicketListSetting("reporttickets", DefaultListName["reporttickets"], disOrder, 20, reportticketsSortColumns, reportticketsFilterColumns,null));
+            }
+
             return settings;
         }
 
@@ -257,7 +309,11 @@ namespace TicketDesk.Domain.Model
                     {
                         "historytickets",
                         Strings.DefaultListNameHistoryTickets
-                     }
+                     },
+                    {
+                        "reporttickets",
+                        Strings.DefaultListNameReportTickets
+                    }
                 };
             }
         }

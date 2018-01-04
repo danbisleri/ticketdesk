@@ -15,9 +15,9 @@
 
 var Globalize;
 
-if ( typeof require !== "undefined"
-	&& typeof exports !== "undefined"
-	&& typeof module !== "undefined" ) {
+if ( typeof require !== "undefined" &&
+	typeof exports !== "undefined" &&
+	typeof module !== "undefined" ) {
 	// Assume CommonJS
 	Globalize = require( "globalize" );
 } else {
@@ -31,6 +31,9 @@ Globalize.addCultureInfo( "es-DO", "default", {
 	nativeName: "Español (República Dominicana)",
 	language: "es",
 	numberFormat: {
+		"NaN": "NeuN",
+		negativeInfinity: "-Infinito",
+		positiveInfinity: "Infinito",
 		currency: {
 			symbol: "RD$"
 		}

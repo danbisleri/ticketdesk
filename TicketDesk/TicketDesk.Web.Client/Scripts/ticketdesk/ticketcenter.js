@@ -41,10 +41,22 @@
             var setupFilterForm = function() {
                 $('.filterBar select').addClass('form-control');
                 $('.pagination').addClass('pagination-sm');
-                $("#filterSubmitButton").hide();
-                $('select.postback').change(function() {
-                    $('#filterSubmitButton').trigger('click');
-                });
+                //$("#filterSubmitButton").hide();
+                //$('select.postback').change(
+                //   function () {
+                //      $('#filterSubmitButton').trigger('click');
+                //   }
+                //);
+                //$("#dateStart").change(
+                //    function () {
+                //        $('#filterSubmitButton').trigger('click');
+                //    }
+                //);
+                //$("#dateEnd").change(
+                //    function () {
+                //        $('#filterSubmitButton').trigger('click');
+                //    }
+                //);
             };
 
             return {

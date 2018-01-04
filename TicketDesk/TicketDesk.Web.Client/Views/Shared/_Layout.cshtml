@@ -27,6 +27,10 @@
     </style>
     @Styles.Render("~/content/styles")
     @Scripts.Render("~/bundles/modernizr")
+
+
+
+
     @RenderSection("customHeader", required: false)
     @{
         var insightsKey = System.Configuration.ConfigurationManager.AppSettings["ticketdesk:InsightsInstrumentationKey"];

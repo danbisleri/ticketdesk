@@ -46,6 +46,9 @@ namespace TicketDesk.Web.Client
             bundles.Add(new ScriptBundle("~/bundles/datepicker")
                 .Include("~/Scripts/bootstrap-datepicker.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/datepicker_pt_br")
+                .Include("~/Scripts/locales/bootstrap-datepicker.pt-BR.min"));
+
             bundles.Add(new ScriptBundle("~/bundles/editticket")
                 .Include("~/Scripts/ticketdesk/edit-ticket.js"));
 
