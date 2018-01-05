@@ -28,6 +28,7 @@ using TicketDesk.Web.Client.Models;
 using TicketDesk.Web.Identity;
 using TicketDesk.Web.Identity.Model;
 using TicketDesk.Localization.Controllers;
+using TicketDesk.Localization;
 
 namespace TicketDesk.Web.Client.Controllers
 {
@@ -189,5 +190,21 @@ namespace TicketDesk.Web.Client.Controllers
             }
             return RedirectToAction("Index", "TicketCenter");
         }
+
+        [Route("language")]
+        public ActionResult SetLanguage(string name)
+        {
+            CultureHelper.SetCurrentCulture(name);
+
+            var cookie = new HttpCookie("_culture", name);
+            cookie.Expires = DateTime.Today.AddYears(1);
+            Response.SetCookie(cookie);
+
+            if (Request.UrlReferrer != null && !string.IsNullOrEmpty(Request.UrlReferrer.AbsoluteUri))
+                return Redirect(Request.UrlReferrer.AbsoluteUri);
+            else
+                return View();
+        }
+
     }
 }

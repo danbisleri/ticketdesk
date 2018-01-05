@@ -41,7 +41,8 @@ namespace TicketDesk.Web.Client.Controllers
         [Route("index")]
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("SignIn", "User", "loginLink");
+            //return View();
         }
  
         [Route("about")]
