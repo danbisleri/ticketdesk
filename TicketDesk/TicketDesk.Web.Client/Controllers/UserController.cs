@@ -118,6 +118,10 @@ namespace TicketDesk.Web.Client.Controllers
             ViewBag.ReturnUrl = returnUrl;
             ViewBag.IsDemoMode = (ConfigurationManager.AppSettings["ticketdesk:DemoModeEnabled"] ?? "false").Equals("true", StringComparison.InvariantCultureIgnoreCase);
 
+            //return RedirectToAction("language", "User", new { name = "pt-BR"});
+
+            SetLanguage("pt-BR");
+
             return View();
             //return RedirectToAction("Index", "TicketCenter");
         }
